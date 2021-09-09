@@ -40,7 +40,7 @@ namespace Input
         private void Look()
         {
             _rotation -= _lookY;
-            _rotation = Mathf.Clamp(_rotation, -75f, 75f);
+            _rotation = Mathf.Clamp(_rotation, -45f, 45f);
             _camera.transform.localRotation = Quaternion.Euler(_rotation, 0f, 0f);
             transform.Rotate(Vector3.up * _lookX);
         }

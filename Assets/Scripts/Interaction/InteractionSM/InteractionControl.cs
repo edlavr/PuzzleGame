@@ -6,8 +6,8 @@ namespace Interaction.InteractionSM
 {
     public class InteractionControl : MonoBehaviour
     {
-        public bool _isInteractPressed;
-        public bool _interactionBroken;
+        [HideInInspector] public bool _isInteractPressed;
+        [HideInInspector] public bool _interactionBroken;
         private Camera _mainCamera;
         [SerializeField] private LayerMask _interactableMask;
 
