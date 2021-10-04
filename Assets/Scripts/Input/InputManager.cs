@@ -11,6 +11,8 @@ namespace Input
         public static event Action OnJump;
         public static event Action<Vector2> OnLook;
         public static event Action OnInteraction;
+        public static event Action OnRecord;
+        public static event Action OnRewind;
 
         private void Awake()
         {
@@ -27,6 +29,10 @@ namespace Input
             _playerInput.CharacterControl.Look.canceled += OnLookInput;
 
             _playerInput.CharacterControl.Interact.started += OnInteractionInput;
+            
+            _playerInput.CharacterControl.Record.started += OnRecordInput;
+            
+            _playerInput.CharacterControl.Rewind.started += OnRewindInput;
         }
         
         private void OnEnable()
@@ -57,6 +63,18 @@ namespace Input
         private static void OnInteractionInput(InputAction.CallbackContext context)
         {
             OnInteraction?.Invoke();
+        }
+
+        private static void OnRecordInput(InputAction.CallbackContext context)
+        {
+            Debug.Log("record");
+            OnRecord?.Invoke();
+        }
+        
+        private static void OnRewindInput(InputAction.CallbackContext context)
+        {
+            Debug.Log("rewind");
+            OnRewind?.Invoke();
         }
 
     }

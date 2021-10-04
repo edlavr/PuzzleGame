@@ -5,18 +5,24 @@ namespace Interaction.InteractionSM
         public override void EnterState(InteractionControl interactionControl)
         {
             base.EnterState(interactionControl);
-            interactable = interactionControl.CastCheck();
-            interactable.ChangeState();
+            InteractableObject = interactionControl.CastCheck();
+            InteractableObject.ChangeInteractionState(InteractableObject.InteractActiveState);
         }
 
         public override void UpdateState(InteractionControl interactionControl)
         {
-            if (interactionControl._isInteractPressed || interactionControl._interactionBroken)
+            if (interactionControl.IsRecordPressed && InteractableObject.CurrentRecordState != InteractableObject.RecordActiveState)
             {
-                interactionControl._interactionBroken = false;
-                interactionControl._isInteractPressed = false;
-                interactable.ChangeState();
-                interactable = null;
+                interactionControl.IsRecordPressed = false;
+                interactionControl.RecordedInteractables.Add(InteractableObject);
+                InteractableObject.ChangeRecordState(InteractableObject.RecordActiveState);
+            }
+            if (interactionControl.IsInteractPressed || interactionControl.InteractionBroken)
+            {
+                interactionControl.InteractionBroken = false;
+                interactionControl.IsInteractPressed = false;
+                InteractableObject.ChangeInteractionState(InteractableObject.InteractIdleState);
+                InteractableObject = null;
                 interactionControl.ChangeState(interactionControl.ReadyState);
             }
         }

@@ -2,14 +2,16 @@ namespace Interaction.InteractionSM
 {
     public class InteractionStateIdle : InteractionStateBase
     {
-        public override void EnterState(InteractionControl interactionControl)
+        /*public override void EnterState(InteractionControl interactionControl)
         {
             base.EnterState(interactionControl);
-        }
+        }*/
 
         public override void UpdateState(InteractionControl interactionControl)
         {
-            interactionControl._isInteractPressed = false;
+            InteractableObject = null;
+            interactionControl.IsInteractPressed = false;
+            interactionControl.IsRecordPressed = false;
             if (interactionControl.CastCheck())
             {
                 interactionControl.ChangeState(interactionControl.ReadyState);

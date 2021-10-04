@@ -9,14 +9,14 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - Ground
   - Interactable
-  - Moving
-  - 
-  - 
+  - Interactable Rewind
+  - Moving Platform
+  - Button
   - 
   - 
   - 

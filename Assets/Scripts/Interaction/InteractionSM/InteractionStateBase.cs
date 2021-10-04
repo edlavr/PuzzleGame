@@ -1,12 +1,11 @@
 using System;
-using UnityEngine;
 
 namespace Interaction.InteractionSM
 {
-    public abstract class InteractionStateBase
+    public abstract class InteractionStateBase : IStateMachine<InteractionControl>
     {
         public static event Action<InteractionStateBase> OnInteractionStateChanged;
-        public static InteractableSM.Interactable interactable;
+        protected static Interactable InteractableObject;
 
         public virtual void EnterState(InteractionControl interactionControl)
         {

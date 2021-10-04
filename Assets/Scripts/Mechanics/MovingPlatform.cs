@@ -10,7 +10,7 @@ namespace Mechanics
         [Header("Variables")]
         [SerializeField] private float speed;
         [SerializeField] private MovingPlatformMode mode;
-        private int prevPoint = 0;
+        private int prevPoint;
         private int currentPoint = 1;
         private int multiplier = 1;
 
@@ -48,11 +48,9 @@ namespace Mechanics
         {
             if (timerem < time)
             {
-                //float _step =  speed * Time.deltaTime;
-                //platform.position = Vector3.MoveTowards(platform.position, points[counter].position, _step);
-                Vector3 currentPos = Vector3.Lerp(points[prevPoint].position, points[currentPoint].position, timerem/time);
+                Vector3 _currentPos = Vector3.Lerp(points[prevPoint].position, points[currentPoint].position, timerem/time);
                 timerem += Time.fixedDeltaTime;
-                rb.MovePosition(currentPos);
+                rb.MovePosition(_currentPos);
             }
             else
             {

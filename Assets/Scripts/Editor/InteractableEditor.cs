@@ -1,6 +1,5 @@
 using Cinemachine;
-using Interaction.InteractableSM;
-using Interaction.InteractionSM;
+using Interaction;
 using UnityEditor;
 using UnityEngine;
 

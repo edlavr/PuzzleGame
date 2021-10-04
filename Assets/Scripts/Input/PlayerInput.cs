@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/Input/PlayerInput.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Scripts/Input/PlayerInput.inputactions'
 
 using System;
 using System.Collections;
@@ -6,14 +6,12 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
-namespace Input
+public class @PlayerInput : IInputActionCollection, IDisposable
 {
-    public class @PlayerInput : IInputActionCollection, IDisposable
+    public InputActionAsset asset { get; }
+    public @PlayerInput()
     {
-        public InputActionAsset asset { get; }
-        public @PlayerInput()
-        {
-            asset = InputActionAsset.FromJson(@"{
+        asset = InputActionAsset.FromJson(@"{
     ""name"": ""PlayerInput"",
     ""maps"": [
         {
@@ -49,6 +47,22 @@ namespace Input
                     ""type"": ""Value"",
                     ""id"": ""8dfcd147-20f1-408d-845b-f2295f8a8742"",
                     ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Rewind"",
+                    ""type"": ""Button"",
+                    ""id"": ""fbc8755a-ee09-4280-9b63-b077589fe06b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Record"",
+                    ""type"": ""Button"",
+                    ""id"": ""61743fe1-d0d8-4a86-a32c-5907a739fb56"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
                 }
@@ -185,126 +199,189 @@ namespace Input
                     ""action"": ""Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""eb30e700-0a37-4647-8863-af96f51dd495"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rewind"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""81483e91-f607-46d3-aa3c-c9f0ad6b2465"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rewind"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e3e0d8b6-a38c-4bcb-9af2-5c40ca9c6332"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Record"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a6518d0b-c0e9-4c78-8d57-4886ca6b9d8f"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Record"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
     ],
     ""controlSchemes"": []
 }");
-            // CharacterControl
-            m_CharacterControl = asset.FindActionMap("CharacterControl", throwIfNotFound: true);
-            m_CharacterControl_Move = m_CharacterControl.FindAction("Move", throwIfNotFound: true);
-            m_CharacterControl_Jump = m_CharacterControl.FindAction("Jump", throwIfNotFound: true);
-            m_CharacterControl_Interact = m_CharacterControl.FindAction("Interact", throwIfNotFound: true);
-            m_CharacterControl_Look = m_CharacterControl.FindAction("Look", throwIfNotFound: true);
-        }
-
-        public void Dispose()
-        {
-            UnityEngine.Object.Destroy(asset);
-        }
-
-        public InputBinding? bindingMask
-        {
-            get => asset.bindingMask;
-            set => asset.bindingMask = value;
-        }
-
-        public ReadOnlyArray<InputDevice>? devices
-        {
-            get => asset.devices;
-            set => asset.devices = value;
-        }
-
-        public ReadOnlyArray<InputControlScheme> controlSchemes => asset.controlSchemes;
-
-        public bool Contains(InputAction action)
-        {
-            return asset.Contains(action);
-        }
-
-        public IEnumerator<InputAction> GetEnumerator()
-        {
-            return asset.GetEnumerator();
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
-        }
-
-        public void Enable()
-        {
-            asset.Enable();
-        }
-
-        public void Disable()
-        {
-            asset.Disable();
-        }
-
         // CharacterControl
-        private readonly InputActionMap m_CharacterControl;
-        private ICharacterControlActions m_CharacterControlActionsCallbackInterface;
-        private readonly InputAction m_CharacterControl_Move;
-        private readonly InputAction m_CharacterControl_Jump;
-        private readonly InputAction m_CharacterControl_Interact;
-        private readonly InputAction m_CharacterControl_Look;
-        public struct CharacterControlActions
+        m_CharacterControl = asset.FindActionMap("CharacterControl", throwIfNotFound: true);
+        m_CharacterControl_Move = m_CharacterControl.FindAction("Move", throwIfNotFound: true);
+        m_CharacterControl_Jump = m_CharacterControl.FindAction("Jump", throwIfNotFound: true);
+        m_CharacterControl_Interact = m_CharacterControl.FindAction("Interact", throwIfNotFound: true);
+        m_CharacterControl_Look = m_CharacterControl.FindAction("Look", throwIfNotFound: true);
+        m_CharacterControl_Rewind = m_CharacterControl.FindAction("Rewind", throwIfNotFound: true);
+        m_CharacterControl_Record = m_CharacterControl.FindAction("Record", throwIfNotFound: true);
+    }
+
+    public void Dispose()
+    {
+        UnityEngine.Object.Destroy(asset);
+    }
+
+    public InputBinding? bindingMask
+    {
+        get => asset.bindingMask;
+        set => asset.bindingMask = value;
+    }
+
+    public ReadOnlyArray<InputDevice>? devices
+    {
+        get => asset.devices;
+        set => asset.devices = value;
+    }
+
+    public ReadOnlyArray<InputControlScheme> controlSchemes => asset.controlSchemes;
+
+    public bool Contains(InputAction action)
+    {
+        return asset.Contains(action);
+    }
+
+    public IEnumerator<InputAction> GetEnumerator()
+    {
+        return asset.GetEnumerator();
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
+    }
+
+    public void Enable()
+    {
+        asset.Enable();
+    }
+
+    public void Disable()
+    {
+        asset.Disable();
+    }
+
+    // CharacterControl
+    private readonly InputActionMap m_CharacterControl;
+    private ICharacterControlActions m_CharacterControlActionsCallbackInterface;
+    private readonly InputAction m_CharacterControl_Move;
+    private readonly InputAction m_CharacterControl_Jump;
+    private readonly InputAction m_CharacterControl_Interact;
+    private readonly InputAction m_CharacterControl_Look;
+    private readonly InputAction m_CharacterControl_Rewind;
+    private readonly InputAction m_CharacterControl_Record;
+    public struct CharacterControlActions
+    {
+        private @PlayerInput m_Wrapper;
+        public CharacterControlActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Move => m_Wrapper.m_CharacterControl_Move;
+        public InputAction @Jump => m_Wrapper.m_CharacterControl_Jump;
+        public InputAction @Interact => m_Wrapper.m_CharacterControl_Interact;
+        public InputAction @Look => m_Wrapper.m_CharacterControl_Look;
+        public InputAction @Rewind => m_Wrapper.m_CharacterControl_Rewind;
+        public InputAction @Record => m_Wrapper.m_CharacterControl_Record;
+        public InputActionMap Get() { return m_Wrapper.m_CharacterControl; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(CharacterControlActions set) { return set.Get(); }
+        public void SetCallbacks(ICharacterControlActions instance)
         {
-            private @PlayerInput m_Wrapper;
-            public CharacterControlActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
-            public InputAction @Move => m_Wrapper.m_CharacterControl_Move;
-            public InputAction @Jump => m_Wrapper.m_CharacterControl_Jump;
-            public InputAction @Interact => m_Wrapper.m_CharacterControl_Interact;
-            public InputAction @Look => m_Wrapper.m_CharacterControl_Look;
-            public InputActionMap Get() { return m_Wrapper.m_CharacterControl; }
-            public void Enable() { Get().Enable(); }
-            public void Disable() { Get().Disable(); }
-            public bool enabled => Get().enabled;
-            public static implicit operator InputActionMap(CharacterControlActions set) { return set.Get(); }
-            public void SetCallbacks(ICharacterControlActions instance)
+            if (m_Wrapper.m_CharacterControlActionsCallbackInterface != null)
             {
-                if (m_Wrapper.m_CharacterControlActionsCallbackInterface != null)
-                {
-                    @Move.started -= m_Wrapper.m_CharacterControlActionsCallbackInterface.OnMove;
-                    @Move.performed -= m_Wrapper.m_CharacterControlActionsCallbackInterface.OnMove;
-                    @Move.canceled -= m_Wrapper.m_CharacterControlActionsCallbackInterface.OnMove;
-                    @Jump.started -= m_Wrapper.m_CharacterControlActionsCallbackInterface.OnJump;
-                    @Jump.performed -= m_Wrapper.m_CharacterControlActionsCallbackInterface.OnJump;
-                    @Jump.canceled -= m_Wrapper.m_CharacterControlActionsCallbackInterface.OnJump;
-                    @Interact.started -= m_Wrapper.m_CharacterControlActionsCallbackInterface.OnInteract;
-                    @Interact.performed -= m_Wrapper.m_CharacterControlActionsCallbackInterface.OnInteract;
-                    @Interact.canceled -= m_Wrapper.m_CharacterControlActionsCallbackInterface.OnInteract;
-                    @Look.started -= m_Wrapper.m_CharacterControlActionsCallbackInterface.OnLook;
-                    @Look.performed -= m_Wrapper.m_CharacterControlActionsCallbackInterface.OnLook;
-                    @Look.canceled -= m_Wrapper.m_CharacterControlActionsCallbackInterface.OnLook;
-                }
-                m_Wrapper.m_CharacterControlActionsCallbackInterface = instance;
-                if (instance != null)
-                {
-                    @Move.started += instance.OnMove;
-                    @Move.performed += instance.OnMove;
-                    @Move.canceled += instance.OnMove;
-                    @Jump.started += instance.OnJump;
-                    @Jump.performed += instance.OnJump;
-                    @Jump.canceled += instance.OnJump;
-                    @Interact.started += instance.OnInteract;
-                    @Interact.performed += instance.OnInteract;
-                    @Interact.canceled += instance.OnInteract;
-                    @Look.started += instance.OnLook;
-                    @Look.performed += instance.OnLook;
-                    @Look.canceled += instance.OnLook;
-                }
+                @Move.started -= m_Wrapper.m_CharacterControlActionsCallbackInterface.OnMove;
+                @Move.performed -= m_Wrapper.m_CharacterControlActionsCallbackInterface.OnMove;
+                @Move.canceled -= m_Wrapper.m_CharacterControlActionsCallbackInterface.OnMove;
+                @Jump.started -= m_Wrapper.m_CharacterControlActionsCallbackInterface.OnJump;
+                @Jump.performed -= m_Wrapper.m_CharacterControlActionsCallbackInterface.OnJump;
+                @Jump.canceled -= m_Wrapper.m_CharacterControlActionsCallbackInterface.OnJump;
+                @Interact.started -= m_Wrapper.m_CharacterControlActionsCallbackInterface.OnInteract;
+                @Interact.performed -= m_Wrapper.m_CharacterControlActionsCallbackInterface.OnInteract;
+                @Interact.canceled -= m_Wrapper.m_CharacterControlActionsCallbackInterface.OnInteract;
+                @Look.started -= m_Wrapper.m_CharacterControlActionsCallbackInterface.OnLook;
+                @Look.performed -= m_Wrapper.m_CharacterControlActionsCallbackInterface.OnLook;
+                @Look.canceled -= m_Wrapper.m_CharacterControlActionsCallbackInterface.OnLook;
+                @Rewind.started -= m_Wrapper.m_CharacterControlActionsCallbackInterface.OnRewind;
+                @Rewind.performed -= m_Wrapper.m_CharacterControlActionsCallbackInterface.OnRewind;
+                @Rewind.canceled -= m_Wrapper.m_CharacterControlActionsCallbackInterface.OnRewind;
+                @Record.started -= m_Wrapper.m_CharacterControlActionsCallbackInterface.OnRecord;
+                @Record.performed -= m_Wrapper.m_CharacterControlActionsCallbackInterface.OnRecord;
+                @Record.canceled -= m_Wrapper.m_CharacterControlActionsCallbackInterface.OnRecord;
+            }
+            m_Wrapper.m_CharacterControlActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Move.started += instance.OnMove;
+                @Move.performed += instance.OnMove;
+                @Move.canceled += instance.OnMove;
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
+                @Interact.started += instance.OnInteract;
+                @Interact.performed += instance.OnInteract;
+                @Interact.canceled += instance.OnInteract;
+                @Look.started += instance.OnLook;
+                @Look.performed += instance.OnLook;
+                @Look.canceled += instance.OnLook;
+                @Rewind.started += instance.OnRewind;
+                @Rewind.performed += instance.OnRewind;
+                @Rewind.canceled += instance.OnRewind;
+                @Record.started += instance.OnRecord;
+                @Record.performed += instance.OnRecord;
+                @Record.canceled += instance.OnRecord;
             }
         }
-        public CharacterControlActions @CharacterControl => new CharacterControlActions(this);
-        public interface ICharacterControlActions
-        {
-            void OnMove(InputAction.CallbackContext context);
-            void OnJump(InputAction.CallbackContext context);
-            void OnInteract(InputAction.CallbackContext context);
-            void OnLook(InputAction.CallbackContext context);
-        }
+    }
+    public CharacterControlActions @CharacterControl => new CharacterControlActions(this);
+    public interface ICharacterControlActions
+    {
+        void OnMove(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
+        void OnLook(InputAction.CallbackContext context);
+        void OnRewind(InputAction.CallbackContext context);
+        void OnRecord(InputAction.CallbackContext context);
     }
 }

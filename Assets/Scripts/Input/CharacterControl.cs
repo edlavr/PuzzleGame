@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace Input
@@ -14,6 +13,7 @@ namespace Input
         [SerializeField] private float _speed = 5f; 
         [SerializeField] private float _jumpHeight = 2f;
         [SerializeField] private float _gravityMultiplier = 2f;
+        [SerializeField] private float _forceMultiplier = 1f;
 
         // Walking
         private Vector3 _move;
@@ -66,7 +66,8 @@ namespace Input
 
         private void Walk()
         {
-            _move = transform.right * _moveX * _speed + transform.forward * _moveZ * _speed;
+            var _transform = transform;
+            _move = _transform.right * (_moveX * _speed) + _transform.forward * (_moveZ * _speed);
             _characterController.Move(_move * Time.deltaTime);
         }
 
@@ -97,8 +98,26 @@ namespace Input
             _jumpMove.y = (_jumpMove.y * 2 + gravity * Time.deltaTime) * .5f;
 
             _characterController.Move(_jumpMove * Time.deltaTime);
+
+            _jumpPressed = false;
         }
 
+        private void OnControllerColliderHit(ControllerColliderHit hit)
+        {
+            if (hit.gameObject.layer != 7) return;
+            if (_groundCheckPos.position.y - 0.5f > hit.gameObject.transform.position.y)
+            {
+                return;
+            }
+            Rigidbody _rigidbody = hit.collider.attachedRigidbody;
+            var _position = transform.position;
+            
+            Vector3 _forceDirection = hit.gameObject.transform.position - _position;
+            _forceDirection.y = 0;
+            _forceDirection.Normalize();
+            _rigidbody.velocity += _forceDirection * _forceMultiplier;
+        }
+        
         private void Update()
         {
             Walk();
