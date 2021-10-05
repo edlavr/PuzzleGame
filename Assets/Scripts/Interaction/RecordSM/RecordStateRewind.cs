@@ -3,57 +3,57 @@ using UnityEngine;
 
 namespace Interaction.RecordSM
 {
-    public class RecordStateRewind : IStateMachine<Interactable>
+    public class RecordStateRewind : IStateMachine<InteractableObj>
     {
         private float _shaderValueDelta;
-        public void EnterState(Interactable interactable)
+        public void EnterState(InteractableObj interactableObj)
         {
-            interactable.isRewinding = true;
-            interactable.ChangeInteractionState(interactable.InteractIdleState);
-            interactable.gameObject.layer = 8;
+            interactableObj.IsRewinding = true;
+            interactableObj.ChangeInteractionState(interactableObj.InteractIdleState);
+            interactableObj.gameObject.layer = 8;
             //interactable.BC.enabled = false;
-            _shaderValueDelta = 1f / interactable.PointsInTime.Count;
-            interactable.Material.SetInt("IsRewind",1);
+            _shaderValueDelta = 1f / interactableObj.PointsInTime.Count;
+            interactableObj.Material.SetInt("IsRewind",1);
         }
 
-        public void UpdateState(Interactable interactable)
+        public void UpdateState(InteractableObj interactableObj)
         {
-            float _shaderValue = interactable.Material.GetFloat("Value");
+            float _shaderValue = interactableObj.Material.GetFloat("Value");
             if (_shaderValue < 1)
             {
-                interactable.Material.SetFloat("Value", _shaderValue + _shaderValueDelta);
+                interactableObj.Material.SetFloat("Value", _shaderValue + _shaderValueDelta);
             }
-            interactable.RB.velocity = Vector3.zero;
-            interactable.RB.angularVelocity = Vector3.zero;
-            if (interactable.PointsInTime.Count != 0)
+            interactableObj.RB.velocity = Vector3.zero;
+            interactableObj.RB.angularVelocity = Vector3.zero;
+            if (interactableObj.PointsInTime.Count != 0)
             {
-                UpdateTransform(interactable);
+                UpdateTransform(interactableObj);
             }
             else
             {
-                interactable.ChangeRecordState(interactable.RecordIdleState);
+                interactableObj.ChangeRecordState(interactableObj.RecordIdleState);
             }
         }
 
-        public void ExitState(Interactable interactable)
+        public void ExitState(InteractableObj interactableObj)
         {
-            interactable.Material.SetInt("IsRewind",0);
-            interactable.Material.SetColor("BaseColor", interactable.BaseColor);
-            interactable.Material.SetColor("PaintColor", interactable.PaintColor);
-            interactable.Material.SetFloat("Value", 0);
-            interactable.PointsInTime.Clear();
+            interactableObj.Material.SetInt("IsRewind",0);
+            interactableObj.Material.SetColor("BaseColor", interactableObj.BaseColor);
+            interactableObj.Material.SetColor("PaintColor", interactableObj.PaintColor);
+            interactableObj.Material.SetFloat("Value", 0);
+            interactableObj.PointsInTime.Clear();
             //interactable.BC.enabled = true;
-            interactable.gameObject.layer = 7;
-            interactable.isRewinding = false;
+            interactableObj.gameObject.layer = 7;
+            interactableObj.IsRewinding = false;
         }
 
-        private void UpdateTransform(Interactable interactable)
+        private void UpdateTransform(InteractableObj interactableObj)
         {
-            var _pointInTime = interactable.PointsInTime[0];
-            var _transform = interactable.transform;
+            var _pointInTime = interactableObj.PointsInTime[0];
+            var _transform = interactableObj.transform;
             _transform.position = _pointInTime.Position;
             _transform.rotation = _pointInTime.Rotation;
-            interactable.PointsInTime.RemoveAt(0);
+            interactableObj.PointsInTime.RemoveAt(0);
         }
     }
 }

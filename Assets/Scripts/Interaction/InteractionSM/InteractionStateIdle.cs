@@ -9,7 +9,7 @@ namespace Interaction.InteractionSM
 
         public override void UpdateState(InteractionControl interactionControl)
         {
-            InteractableObject = null;
+            InteractableObj = null;
             interactionControl.IsInteractPressed = false;
             interactionControl.IsRecordPressed = false;
             if (interactionControl.CastCheck())

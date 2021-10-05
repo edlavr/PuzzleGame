@@ -1,8 +1,6 @@
-using UnityEngine;
-
-namespace Interaction.RecordSM
+namespace Interaction.InteractSM
 {
-    public class RecordStateIdle : IStateMachine<InteractableObj>
+    public class InteractObjStateIdle : IStateMachine<InteractableObj>
     {
         public void EnterState(InteractableObj interactableObj)
         {
@@ -11,12 +9,10 @@ namespace Interaction.RecordSM
 
         public void UpdateState(InteractableObj interactableObj)
         {
-            
         }
 
         public void ExitState(InteractableObj interactableObj)
         {
-            
         }
     }
 }

@@ -2,28 +2,28 @@ using UnityEngine;
 
 namespace Interaction.RecordSM
 {
-    public class RecordStateActive : IStateMachine<Interactable>
+    public class RecordStateActive : IStateMachine<InteractableObj>
     {
         private Transform _transform;
 
-        public void EnterState(Interactable interactable)
+        public void EnterState(InteractableObj interactableObj)
         {
-            _transform = interactable.transform;
-            interactable.PointsInTime.Add(new PointInTime(_transform.position, _transform.rotation));
+            _transform = interactableObj.transform;
+            interactableObj.PointsInTime.Add(new PointInTime(_transform.position, _transform.rotation));
         }
 
-        public void UpdateState(Interactable interactable)
+        public void UpdateState(InteractableObj interactableObj)
         {
-            float _shaderValue = interactable.Material.GetFloat("Value");
+            float _shaderValue = interactableObj.Material.GetFloat("Value");
             if (_shaderValue < 1)
             {
-                interactable.Material.SetFloat("Value", _shaderValue + Time.deltaTime * interactable.ColorSpeed);
+                interactableObj.Material.SetFloat("Value", _shaderValue + Time.deltaTime * interactableObj.ColorSpeed);
             }
-            _transform = interactable.transform;
+            _transform = interactableObj.transform;
             PointInTime _currentPointInTime = new PointInTime(_transform.position, _transform.rotation);
-            if (!IsSamePoint(interactable.PointsInTime[0], _currentPointInTime))
+            if (!IsSamePoint(interactableObj.PointsInTime[0], _currentPointInTime))
             { 
-                interactable.PointsInTime.Insert(0, _currentPointInTime);
+                interactableObj.PointsInTime.Insert(0, _currentPointInTime);
             }
         }
 
@@ -32,11 +32,11 @@ namespace Interaction.RecordSM
             return p1.Position == p2.Position && p1.Rotation == p2.Rotation;
         }
 
-        public void ExitState(Interactable interactable)
+        public void ExitState(InteractableObj interactableObj)
         {
-            interactable.Material.SetColor("BaseColor", interactable.PaintColor);
-            interactable.Material.SetColor("PaintColor", interactable.BaseColor);
-            interactable.Material.SetFloat("Value", 0);
+            interactableObj.Material.SetColor("BaseColor", interactableObj.PaintColor);
+            interactableObj.Material.SetColor("PaintColor", interactableObj.BaseColor);
+            interactableObj.Material.SetFloat("Value", 0);
         }
     }
 }

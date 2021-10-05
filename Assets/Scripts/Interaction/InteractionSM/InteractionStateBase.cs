@@ -5,7 +5,7 @@ namespace Interaction.InteractionSM
     public abstract class InteractionStateBase : IStateMachine<InteractionControl>
     {
         public static event Action<InteractionStateBase> OnInteractionStateChanged;
-        protected static Interactable InteractableObject;
+        protected static InteractableObj InteractableObj;
 
         public virtual void EnterState(InteractionControl interactionControl)
         {

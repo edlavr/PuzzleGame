@@ -288,10 +288,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17bd38f9e0e2cd14a94008b307888075, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsInteractPressed: 0
-  InteractionBroken: 0
-  IsRecordPressed: 0
-  IsRewindPressed: 0
   _interactableMask:
     serializedVersion: 2
     m_Bits: 128
@@ -358,7 +354,6 @@ MonoBehaviour:
   Button: {fileID: 892407275}
   pressHeight: 0.1
   pressSpeed: 1
-  pressedBy: []
 --- !u!1 &382084061
 GameObject:
   m_ObjectHideFlags: 0

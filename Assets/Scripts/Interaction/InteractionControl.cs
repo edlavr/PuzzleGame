@@ -7,13 +7,13 @@ namespace Interaction
 {
     public class InteractionControl : MonoBehaviour
     {
-        [HideInInspector] public bool IsInteractPressed;
-        [HideInInspector] public bool InteractionBroken;
+        internal bool IsInteractPressed;
+        internal bool InteractionBroken;
         
-        [HideInInspector] public bool IsRecordPressed;
-        [HideInInspector] public bool IsRewindPressed;
+        internal bool IsRecordPressed;
+        internal bool IsRewindPressed;
 
-        public HashSet<Interactable> RecordedInteractables = new HashSet<Interactable>();
+        internal readonly HashSet<InteractableObj> RecordedInteractableObjs = new HashSet<InteractableObj>();
 
         private Camera _mainCamera;
         [SerializeField] private LayerMask _interactableMask;
@@ -28,9 +28,9 @@ namespace Interaction
     
         // Interaction State Machine
         private InteractionStateBase _currentState;
-        public readonly InteractionStateIdle IdleState = new InteractionStateIdle();
-        public readonly InteractionStateReady ReadyState = new InteractionStateReady();
-        public readonly InteractionStateActive ActiveState = new InteractionStateActive();
+        internal readonly InteractionStateIdle IdleState = new InteractionStateIdle();
+        internal readonly InteractionStateReady ReadyState = new InteractionStateReady();
+        internal readonly InteractionStateActive ActiveState = new InteractionStateActive();
 
         private void Start()
         {
@@ -85,7 +85,7 @@ namespace Interaction
             if (IsRewindPressed)
             {
                 IsRewindPressed = false;
-                foreach (var _obj in RecordedInteractables)
+                foreach (var _obj in RecordedInteractableObjs)
                 {
                     _obj.RewindOrInterrupt();
                     ChangeState(IdleState);
@@ -93,13 +93,13 @@ namespace Interaction
             }
         }
 
-        public Interactable CastCheck()
+        public InteractableObj CastCheck()
         {
             _raycastPos = _mainCamera.ScreenToWorldPoint(new Vector3(Screen.width / 2f, Screen.height / 2f, 0));
             _isHit = Physics.SphereCast(_raycastPos, _castRadius, _mainCamera.transform.forward, out _castHit, _castDistance, _interactableMask);
             if (!_isHit) return null;
-            var _interactable = _castHit.transform.gameObject.GetComponent<Interactable>();
-            return !_interactable.isRewinding ? _interactable : null;
+            var _interactable = _castHit.transform.gameObject.GetComponent<InteractableObj>();
+            return !_interactable.IsRewinding ? _interactable : null;
         }
     }
 }

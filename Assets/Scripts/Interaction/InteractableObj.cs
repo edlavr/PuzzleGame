@@ -1,29 +1,29 @@
 using System;
 using System.Collections.Generic;
 using Cinemachine;
+using Interaction.InteractableObjSM;
 using Interaction.InteractSM;
 using Interaction.RecordSM;
 using UnityEngine;
 
 namespace Interaction
 {
-    public class Interactable : MonoBehaviour
+    public class InteractableObj : MonoBehaviour
     {
-        private IStateMachine<Interactable> _currentInteractState;
-        public readonly IStateMachine<Interactable> InteractIdleState = new InteractObjStateIdle();
-        public readonly IStateMachine<Interactable> InteractActiveState = new InteractObjStateActive();
+        internal IStateMachine<InteractableObj> CurrentInteractState;
+        internal readonly IStateMachine<InteractableObj> InteractIdleState = new InteractObjStateIdle();
+        internal readonly IStateMachine<InteractableObj> InteractActiveState = new InteractObjStateActive();
 
-        public IStateMachine<Interactable> CurrentRecordState;
-        public readonly IStateMachine<Interactable> RecordIdleState = new RecordStateIdle();
-        public readonly IStateMachine<Interactable> RecordActiveState = new RecordStateActive();
-        public readonly IStateMachine<Interactable> RecordRewindState = new RecordStateRewind();
+        internal IStateMachine<InteractableObj> CurrentRecordState;
+        internal readonly IStateMachine<InteractableObj> RecordIdleState = new RecordStateIdle();
+        internal readonly IStateMachine<InteractableObj> RecordActiveState = new RecordStateActive();
+        internal readonly IStateMachine<InteractableObj> RecordRewindState = new RecordStateRewind();
 
         // Physics
         public InteractionControl interactionControl;
         public CinemachineVirtualCamera playerCamera;
         public GameObject interactableDest;
-        [HideInInspector] public Rigidbody RB;
-        [HideInInspector] public BoxCollider BC;
+        internal Rigidbody RB;
         [Header("Variables")]
         public float MinSpeed = 1;
         public float MaxSpeed = 10;
@@ -32,46 +32,47 @@ namespace Interaction
         public float BreakDistance = 10f;
 
         // Rewind
-        public List<PointInTime> PointsInTime = new List<PointInTime>();
-        [HideInInspector] public bool isRewinding;
+        internal readonly List<PointInTime> PointsInTime = new List<PointInTime>();
+        internal bool IsRewinding;
         
         // Material
-        [HideInInspector] public Material Material;
+        internal Material Material;
         public float ColorSpeed = .5f;
-        [HideInInspector] public Color BaseColor;
-        [HideInInspector] public Color PaintColor;
-        
+        internal Color BaseColor;
+        internal Color PaintColor;
+        private static readonly int BaseColorID = Shader.PropertyToID("BaseColor");
+        private static readonly int PaintColorID = Shader.PropertyToID("PaintColor");
+
 
         private void Awake()
         {
             RB = GetComponent<Rigidbody>();
-            BC = GetComponent<BoxCollider>();
             Material = GetComponent<Renderer>().material;
-            BaseColor = Material.GetColor("BaseColor");
-            PaintColor = Material.GetColor("PaintColor");
+            BaseColor = Material.GetColor(BaseColorID);
+            PaintColor = Material.GetColor(PaintColorID);
         }
 
         private void Start()
         {
-            _currentInteractState = InteractIdleState;
-            _currentInteractState.EnterState(this);
+            CurrentInteractState = InteractIdleState;
+            CurrentInteractState.EnterState(this);
             CurrentRecordState = RecordIdleState;
             CurrentRecordState.EnterState(this);
         }
 
-        public void ChangeInteractionState(IStateMachine<Interactable> state)
+        public void ChangeInteractionState(IStateMachine<InteractableObj> state)
         {
-            if (_currentInteractState == state) return;
+            if (CurrentInteractState == state) return;
             if (state == RecordIdleState || state == RecordActiveState)
             {
                 throw new ArgumentException("Interaction state cannot be a record state");
             }
-            _currentInteractState.ExitState(this);
-            _currentInteractState = state;
-            _currentInteractState.EnterState(this);
+            CurrentInteractState.ExitState(this);
+            CurrentInteractState = state;
+            CurrentInteractState.EnterState(this);
         }
 
-        public void ChangeRecordState(IStateMachine<Interactable> state)
+        public void ChangeRecordState(IStateMachine<InteractableObj> state)
         {
             if (CurrentRecordState == state) return;
             if (state == InteractIdleState || state == InteractActiveState)
@@ -85,7 +86,7 @@ namespace Interaction
 
         private void FixedUpdate()
         {
-            _currentInteractState.UpdateState(this);
+            CurrentInteractState.UpdateState(this);
         }
 
         private void Update()
