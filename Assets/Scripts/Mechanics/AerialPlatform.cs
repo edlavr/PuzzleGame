@@ -1,4 +1,6 @@
 using System;
+using Input;
+using Interaction;
 using UnityEngine;
 
 namespace Mechanics
@@ -15,13 +17,19 @@ namespace Mechanics
         private float _velocityY;
         private float _velocityZ;
         private GameObject cube;
-        private Rigidbody rb;
+        //private Rigidbody rb;
         private float counter = 0;
         public float angle = 45;
+        public bool isPlayerJump;
+        private float sin;
+        private float cos;
+        private float tan;
+        public CharacterController Player;
         private void Awake()
         {
-            var sin = Mathf.Sin(angle * Mathf.Deg2Rad);
-            var tan = Mathf.Tan(angle * Mathf.Deg2Rad);
+            sin = Mathf.Sin(angle * Mathf.Deg2Rad);
+            cos = Mathf.Cos(angle * Mathf.Deg2Rad);
+            tan = Mathf.Tan(angle * Mathf.Deg2Rad);
             var _transform = transform;
             var _destPosition = _destination.position;
             var _position = _transform.position;
@@ -39,26 +47,40 @@ namespace Mechanics
 
         private void OnTriggerEnter(Collider other)
         {
-            rb = other.GetComponent<Rigidbody>();
-            rb.velocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
-            rb.AddForce(_direction, ForceMode.VelocityChange);
-        }
-
-        /*private void Update()
-        {
-            if (rb)
+            if (other.gameObject.CompareTag("Cube"))
             {
-                counter += Time.deltaTime;
-                if(rb.velocity.magnitude >= -0.5 && rb.velocity.magnitude <= .5)
+                if (!other.GetComponent<InteractableObj>().IsInteractActive())
                 {
-                    if (counter > 1f)
-                    {
-                        Debug.Log(counter);
-                        counter = 0;
-                    }
+                    Rigidbody rb = other.GetComponent<Rigidbody>();
+                    rb.velocity = Vector3.zero;
+                    rb.angularVelocity = Vector3.zero;
+                    rb.AddForce(_direction, ForceMode.VelocityChange);
                 }
             }
-        }*/
+
+            if (other.gameObject.CompareTag("Player"))
+            {
+                counter = 0;
+                isPlayerJump = true;
+            }
+        }
+
+        private void Update()
+        {
+            PlayerJump();
+        }
+
+        private void PlayerJump()
+        {
+            /*if (isPlayerJump)
+            {
+                counter += Time.deltaTime;
+                float x = _velocity * cos * counter;
+                float y = (-(gravity * counter * counter) / 2) + (_velocity * sin * counter);
+                Vector2 _position = new Vector2(x, y);
+                Debug.Log(_position);
+                Player.Move(_position * Time.deltaTime);
+            }*/
+        }
     }
 }

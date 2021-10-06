@@ -43,6 +43,10 @@ namespace Interaction
         private static readonly int BaseColorID = Shader.PropertyToID("BaseColor");
         private static readonly int PaintColorID = Shader.PropertyToID("PaintColor");
 
+        public bool IsInteractActive()
+        {
+            return CurrentInteractState == InteractActiveState;
+        }
 
         private void Awake()
         {
