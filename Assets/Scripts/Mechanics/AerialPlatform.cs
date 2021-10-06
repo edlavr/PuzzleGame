@@ -8,7 +8,7 @@ namespace Mechanics
     public class AerialPlatform : MonoBehaviour
     {
         [SerializeField] private GameObject _platform;
-        [SerializeField] private Transform _destination;
+        [SerializeField] private GameObject _destination;
         private Vector3 _direction;
         private float _distance;
         private float gravity = -9.815f;
@@ -20,18 +20,17 @@ namespace Mechanics
         //private Rigidbody rb;
         private float counter = 0;
         public float angle = 45;
-        public bool isPlayerJump;
         private float sin;
         private float cos;
         private float tan;
-        public CharacterController Player;
+        public CharacterControl Player;
         private void Awake()
         {
             sin = Mathf.Sin(angle * Mathf.Deg2Rad);
             cos = Mathf.Cos(angle * Mathf.Deg2Rad);
             tan = Mathf.Tan(angle * Mathf.Deg2Rad);
             var _transform = transform;
-            var _destPosition = _destination.position;
+            var _destPosition = _destination.transform.position;
             var _position = _transform.position;
             
             _direction = (_destPosition - _position);
@@ -58,29 +57,11 @@ namespace Mechanics
                 }
             }
 
-            if (other.gameObject.CompareTag("Player"))
+            else if (other.gameObject.transform.parent.CompareTag("Player"))
             {
-                counter = 0;
-                isPlayerJump = true;
+                Player.Launch(_direction);
             }
         }
 
-        private void Update()
-        {
-            PlayerJump();
-        }
-
-        private void PlayerJump()
-        {
-            /*if (isPlayerJump)
-            {
-                counter += Time.deltaTime;
-                float x = _velocity * cos * counter;
-                float y = (-(gravity * counter * counter) / 2) + (_velocity * sin * counter);
-                Vector2 _position = new Vector2(x, y);
-                Debug.Log(_position);
-                Player.Move(_position * Time.deltaTime);
-            }*/
-        }
     }
 }

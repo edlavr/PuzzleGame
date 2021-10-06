@@ -1,10 +1,11 @@
+using System.Collections;
 using UnityEngine;
 
 namespace Input
 {
     public class CharacterControl : MonoBehaviour
     {
-        private CharacterController _characterController;
+        private Rigidbody _RB;
         [Header("Ground Check")]
         [SerializeField] private Transform _groundCheckPos;
         [SerializeField] private LayerMask GroundMask;
@@ -13,26 +14,22 @@ namespace Input
         [SerializeField] private float _speed = 5f; 
         [SerializeField] private float _jumpHeight = 2f;
         [SerializeField] private float _gravityMultiplier = 2f;
-        [SerializeField] private float _forceMultiplier = 1f;
 
         // Walking
-        private Vector3 _move;
+        [HideInInspector] public Vector3 _move;
         private float _moveX;
         private float _moveZ;
         
         // Jumping
-        private Vector3 _jumpMove;
         private float gravity = -9.81f;
         private float _jumpVelocity;
-        private bool _jumpPressed;
-        private bool _isJumping;
 
-
+        private bool launch;
 
         private void Awake()
         {
             JumpVariables();
-            _characterController = GetComponent<CharacterController>();
+            _RB = GetComponent<Rigidbody>();
         }
 
         private void JumpVariables()
@@ -61,14 +58,47 @@ namespace Input
         
         private void JumpHandler()
         {
-            _jumpPressed = true;
+            GravityAndJump();
         }
 
         private void Walk()
         {
             var _transform = transform;
-            _move = _transform.right * (_moveX * _speed) + _transform.forward * (_moveZ * _speed);
-            _characterController.Move(_move * Time.deltaTime);
+            if ((_moveX != 0f || _moveZ != 0f) && !launch)
+            {
+                
+                _move = _transform.right * (_moveX * _speed) + _transform.forward * (_moveZ * _speed);
+                _RB.velocity = new Vector3(_move.x, _RB.velocity.y, _move.z);
+            }
+            else if (_moveX == 0f && _moveZ == 0f && !launch)
+            {
+                _RB.velocity = new Vector3(0, _RB.velocity.y, 0);
+            }
+            else if ((_moveX != 0f || _moveZ != 0f) && launch)
+            {
+                _move = _transform.right * (_moveX * _speed) + _transform.forward * (_moveZ * _speed);
+                _RB.velocity += new Vector3(_move.x / 100, 0, _move.z / 100);
+            }
+
+        }
+
+        public void Launch(Vector3 direction)
+        {
+            launch = true;
+            _RB.velocity = Vector3.zero;
+            _RB.angularVelocity = Vector3.zero;
+            _RB.velocity = direction;
+            StartCoroutine(UpdateLaunchBool());
+        }
+
+        private IEnumerator UpdateLaunchBool()
+        {
+            yield return new WaitForSeconds(0.2f);
+            while (!IsGrounded())
+            {
+                yield return null;
+            }
+            launch = false;
         }
 
         private bool IsGrounded()
@@ -78,32 +108,14 @@ namespace Input
 
         private void GravityAndJump()
         {
-            if (IsGrounded() && _jumpMove.y < 0)
+            if (IsGrounded())
             {
-                _isJumping = false;
-                _jumpMove.y = -2f;
+                _RB.AddForce(new Vector3(0, _jumpVelocity, 0), ForceMode.VelocityChange);
             }
-            
-            if (_jumpPressed && IsGrounded())
-            {
-                _isJumping = true;
-                _jumpMove.y = _jumpVelocity;
-            }
-
-            if (_isJumping)
-            {
-                _jumpPressed = false;
-            }
-            
-            _jumpMove.y = (_jumpMove.y * 2 + gravity * Time.deltaTime) * .5f;
-
-            _characterController.Move(_jumpMove * Time.deltaTime);
-
-            _jumpPressed = false;
         }
         
         // push boxes
-        private void OnControllerColliderHit(ControllerColliderHit hit)
+        /*private void OnControllerColliderHit(ControllerColliderHit hit)
         {
             if (hit.gameObject.layer != 7) return;
             if (_groundCheckPos.position.y - 0.5f > hit.gameObject.transform.position.y)
@@ -117,12 +129,11 @@ namespace Input
             _forceDirection.y = 0;
             _forceDirection.Normalize();
             _rigidbody.velocity += _forceDirection * _forceMultiplier;
-        }
+        }*/
         
-        private void Update()
+        private void FixedUpdate()
         {
             Walk();
-            GravityAndJump();
         }
     }
 }

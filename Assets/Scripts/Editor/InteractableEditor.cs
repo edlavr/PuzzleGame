@@ -14,7 +14,7 @@ namespace Editor
             InteractableObj _interactableObj = (InteractableObj) target;
             if(_interactableObj)
             {
-                _interactableObj.gameObject.layer = LayerMask.NameToLayer("Interactable");
+                //_interactableObj.gameObject.layer = LayerMask.NameToLayer("Interactable");
                 _interactableObj.interactableDest = GameObject.Find("INTERACTABLE_DEST");
                 _interactableObj.playerCamera = FindObjectOfType<CinemachineVirtualCamera>();
                 _interactableObj.interactionControl = FindObjectOfType<InteractionControl>();

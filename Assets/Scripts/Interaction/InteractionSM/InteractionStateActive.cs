@@ -22,6 +22,7 @@ namespace Interaction.InteractionSM
                 interactionControl.InteractionBroken = false;
                 interactionControl.IsInteractPressed = false;
                 InteractableObj.ChangeInteractionState(InteractableObj.InteractIdleState);
+                InteractableObj.gameObject.layer = 7;
                 InteractableObj = null;
                 interactionControl.ChangeState(interactionControl.ReadyState);
             }

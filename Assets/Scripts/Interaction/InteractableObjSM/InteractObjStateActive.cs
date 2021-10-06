@@ -8,6 +8,7 @@ namespace Interaction.InteractableObjSM
         {
             interactableObj.RB.useGravity = false;
             interactableObj.RB.constraints = RigidbodyConstraints.FreezeRotation;
+            interactableObj.gameObject.layer = 11;
         }
 
         public void UpdateState(InteractableObj interactableObj)
@@ -19,6 +20,7 @@ namespace Interaction.InteractableObjSM
         {
             interactableObj.RB.useGravity = true;
             interactableObj.RB.constraints = RigidbodyConstraints.None;
+            interactableObj.gameObject.layer = 7;
         }
 
         private void PositionRotationControl(InteractableObj interactableObj)
