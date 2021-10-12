@@ -1,65 +1,77 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
-using Mechanics.GameButtonSM;
 using UnityEngine;
 
-namespace Mechanics
+public class GameButton : MonoBehaviour
 {
-    public class GameButton : MonoBehaviour
-    {
-        internal Vector3 InitialPosition;
-        internal Vector3 CurrentPosition;
-        internal Vector3 PressedPosition;
-        internal Vector3 ChangePosition;
-        public GameObject Button;
-        [Header("Variables")]
-        [SerializeField] private float pressHeight = 0.07f;
-        [SerializeField] private float pressSpeed = .3f;
-        internal float PressTime;
-        internal float CurrentTime;
-        private readonly List<GameObject> pressedBy = new List<GameObject>();
+    internal Vector3 InitialY;
+    internal Vector3 PressedY;
+    public GameObject Button;
+    [Header("Variables")]
+    [SerializeField] private float pressHeight = 0.1f;
+    [SerializeField] private float pressTime = 1f;
+    private float _time;
+    private Vector3 _tick;
+
+    private IEnumerator _button;
     
-        //
-        private IStateMachine<GameButton> currentButtonState;
-        private readonly IStateMachine<GameButton> _idleState = new GameButtonStateIdle();
-        private readonly IStateMachine<GameButton> _pressedState = new GameButtonStatePressed();
-        private void Awake()
-        {
-            InitialPosition = Button.transform.position;
-            CurrentPosition = InitialPosition;
-            PressedPosition = InitialPosition - new Vector3(0, pressHeight, 0);
-            PressTime = pressHeight / pressSpeed;
+    private readonly List<GameObject> pressedBy = new List<GameObject>();
 
-            ChangeState(_idleState);
+    private void Awake()
+    {
+        InitialY = Button.transform.position;
+        PressedY = InitialY - new Vector3(0, pressHeight, 0);
+        _time = pressHeight / pressTime;
+        _tick = new Vector3(0, pressHeight / _time, 0);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        pressedBy.Add(other.gameObject);
+        if (_button != null)
+        {
+            StopCoroutine(_button);
         }
+        _button = PressButton();
+        StartCoroutine(_button);
+    }
 
-        public void ChangeState(IStateMachine<GameButton> state)
+    private void OnTriggerExit(Collider other)
+    {
+        pressedBy.Remove(other.gameObject);
+        if (pressedBy.Count == 0)
         {
-            if (currentButtonState == state) return;
-            currentButtonState?.ExitState(this);
-            currentButtonState = state;
-            currentButtonState.EnterState(this);
+            StopCoroutine(_button);
+            _button = ReleaseButton();
+            StartCoroutine(_button);
         }
+    }
 
-        private void OnTriggerEnter(Collider other)
+    private IEnumerator PressButton()
+    {
+        Debug.Log("press");
+        Button.GetComponent<MeshRenderer>().material.color = Color.blue;
+        float _currentTime = 0;
+        while (Button.transform.position.y > PressedY.y)
         {
-            pressedBy.Add(other.gameObject);
-            ChangeState(_pressedState);
+            Button.transform.position = Vector3.Slerp(Button.transform.position, PressedY, _currentTime / pressTime);
+            _currentTime += Time.fixedDeltaTime;
+            yield return new WaitForFixedUpdate();
         }
-
-        private void OnTriggerExit(Collider other)
+        
+    }
+    
+    private IEnumerator ReleaseButton()
+    {
+        Debug.Log("release");
+        Button.GetComponent<MeshRenderer>().material.color = Color.red;
+        float _currentTime = 0;
+        while (Button.transform.position.y < InitialY.y)
         {
-            pressedBy.Remove(other.gameObject);
-            if (pressedBy.Count == 0)
-            {
-                ChangeState(_idleState);
-            }
-        }
-
-        private void FixedUpdate()
-        {
-            currentButtonState.UpdateState(this);
-            Button.transform.position = CurrentPosition;
-
+            Button.transform.position = Vector3.Slerp(Button.transform.position, InitialY, _currentTime / pressTime);
+            _currentTime += Time.fixedDeltaTime;
+            yield return new WaitForFixedUpdate();
         }
     }
 }

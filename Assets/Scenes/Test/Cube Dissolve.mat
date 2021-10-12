@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Black
+  m_Name: Cube Dissolve
   m_Shader: {fileID: -6465566751694194690, guid: 7998b3a1abc9b73459214f10f6c245d9, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 2
