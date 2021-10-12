@@ -4,13 +4,16 @@ namespace Mechanics
 {
     public class MoveWithPlatform : MonoBehaviour
     {
-        [SerializeField] private CharacterController playerCharacterController;
+        [SerializeField] private Rigidbody playerRigidbody;
         [SerializeField] private Rigidbody platformRigidbody;
 
         private void OnTriggerStay(Collider other)
         {
-            if (other.CompareTag("Player"))
-                playerCharacterController.Move(platformRigidbody.velocity.normalized * Time.fixedDeltaTime / 2);
+            var _parent = other.transform.parent;
+            if (!_parent) return;
+            if (!_parent.CompareTag("Player")) return;
+            Debug.Log(platformRigidbody.velocity);
+            playerRigidbody.AddForce(platformRigidbody.velocity, ForceMode.VelocityChange);
         }
     }
 }

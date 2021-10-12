@@ -1,4 +1,3 @@
-using System;
 using Input;
 using Interaction;
 using UnityEngine;
@@ -7,27 +6,24 @@ namespace Mechanics
 {
     public class AerialPlatform : MonoBehaviour
     {
-        [SerializeField] private GameObject _platform;
         [SerializeField] private GameObject _destination;
+        
         private Vector3 _direction;
         private float _distance;
         private float gravity = -9.815f;
+        
         private float _velocity;
         private float _velocityX;
         private float _velocityY;
         private float _velocityZ;
-        private GameObject cube;
-        //private Rigidbody rb;
-        private float counter = 0;
+
         public float angle = 45;
         private float sin;
-        private float cos;
         private float tan;
         public CharacterControl Player;
         private void Awake()
         {
             sin = Mathf.Sin(angle * Mathf.Deg2Rad);
-            cos = Mathf.Cos(angle * Mathf.Deg2Rad);
             tan = Mathf.Tan(angle * Mathf.Deg2Rad);
             var _transform = transform;
             var _destPosition = _destination.transform.position;
@@ -50,10 +46,10 @@ namespace Mechanics
             {
                 if (!other.GetComponent<InteractableObj>().IsInteractActive())
                 {
-                    Rigidbody rb = other.GetComponent<Rigidbody>();
-                    rb.velocity = Vector3.zero;
-                    rb.angularVelocity = Vector3.zero;
-                    rb.AddForce(_direction, ForceMode.VelocityChange);
+                    Rigidbody _rb = other.GetComponent<Rigidbody>();
+                    _rb.velocity = Vector3.zero;
+                    _rb.angularVelocity = Vector3.zero;
+                    _rb.AddForce(_direction, ForceMode.VelocityChange);
                 }
             }
 
