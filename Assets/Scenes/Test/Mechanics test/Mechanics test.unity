@@ -335,7 +335,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b7ada1321141e047a621d989b60cc9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Button: {fileID: 892407275}
   pressHeight: 0.1
   pressTime: 1
 --- !u!1 &63075327
@@ -1308,7 +1307,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b7ada1321141e047a621d989b60cc9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Button: {fileID: 947847589}
   pressHeight: 0.1
   pressTime: 1
 --- !u!65 &745889169

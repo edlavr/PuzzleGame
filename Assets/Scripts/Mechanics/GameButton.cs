@@ -1,77 +1,76 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameButton : MonoBehaviour
+namespace Mechanics
 {
-    internal Vector3 InitialY;
-    internal Vector3 PressedY;
-    public GameObject Button;
-    [Header("Variables")]
-    [SerializeField] private float pressHeight = 0.1f;
-    [SerializeField] private float pressTime = 1f;
-    private float _time;
-    private Vector3 _tick;
+    public class GameButton : MonoBehaviour
+    {
+        private Vector3 _initialY;
+        private Vector3 _pressedY;
+        private GameObject _button;
+        [Header("Variables")]
+        [SerializeField] private float pressHeight = 0.1f;
+        [SerializeField] private float pressTime = 1f;
 
-    private IEnumerator _button;
+        private IEnumerator _buttonCoroutine;
     
-    private readonly List<GameObject> pressedBy = new List<GameObject>();
+        private readonly List<GameObject> pressedBy = new List<GameObject>();
 
-    private void Awake()
-    {
-        InitialY = Button.transform.position;
-        PressedY = InitialY - new Vector3(0, pressHeight, 0);
-        _time = pressHeight / pressTime;
-        _tick = new Vector3(0, pressHeight / _time, 0);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        pressedBy.Add(other.gameObject);
-        if (_button != null)
+        private void Awake()
         {
-            StopCoroutine(_button);
+            _button = transform.GetChild(0).gameObject;
+            _initialY = _button.transform.position;
+            _pressedY = _initialY - new Vector3(0, pressHeight, 0);
         }
-        _button = PressButton();
-        StartCoroutine(_button);
-    }
 
-    private void OnTriggerExit(Collider other)
-    {
-        pressedBy.Remove(other.gameObject);
-        if (pressedBy.Count == 0)
+        private void OnTriggerEnter(Collider other)
         {
-            StopCoroutine(_button);
-            _button = ReleaseButton();
-            StartCoroutine(_button);
+            pressedBy.Add(other.gameObject);
+            if (_buttonCoroutine != null)
+            {
+                StopCoroutine(_buttonCoroutine);
+            }
+            _buttonCoroutine = PressButton();
+            StartCoroutine(_buttonCoroutine);
         }
-    }
 
-    private IEnumerator PressButton()
-    {
-        Debug.Log("press");
-        Button.GetComponent<MeshRenderer>().material.color = Color.blue;
-        float _currentTime = 0;
-        while (Button.transform.position.y > PressedY.y)
+        private void OnTriggerExit(Collider other)
         {
-            Button.transform.position = Vector3.Slerp(Button.transform.position, PressedY, _currentTime / pressTime);
-            _currentTime += Time.fixedDeltaTime;
-            yield return new WaitForFixedUpdate();
+            pressedBy.Remove(other.gameObject);
+            if (pressedBy.Count == 0)
+            {
+                StopCoroutine(_buttonCoroutine);
+                _buttonCoroutine = ReleaseButton();
+                StartCoroutine(_buttonCoroutine);
+            }
         }
+
+        private IEnumerator PressButton()
+        {
+            Debug.Log("press");
+            _button.GetComponent<MeshRenderer>().material.color = Color.blue;
+            float _currentTime = 0;
+            while (_button.transform.position.y > _pressedY.y)
+            {
+                _button.transform.position = Vector3.Slerp(_button.transform.position, _pressedY, _currentTime / pressTime);
+                _currentTime += Time.fixedDeltaTime;
+                yield return new WaitForFixedUpdate();
+            }
         
-    }
+        }
     
-    private IEnumerator ReleaseButton()
-    {
-        Debug.Log("release");
-        Button.GetComponent<MeshRenderer>().material.color = Color.red;
-        float _currentTime = 0;
-        while (Button.transform.position.y < InitialY.y)
+        private IEnumerator ReleaseButton()
         {
-            Button.transform.position = Vector3.Slerp(Button.transform.position, InitialY, _currentTime / pressTime);
-            _currentTime += Time.fixedDeltaTime;
-            yield return new WaitForFixedUpdate();
+            Debug.Log("release");
+            _button.GetComponent<MeshRenderer>().material.color = Color.red;
+            float _currentTime = 0;
+            while (_button.transform.position.y < _initialY.y)
+            {
+                _button.transform.position = Vector3.Slerp(_button.transform.position, _initialY, _currentTime / pressTime);
+                _currentTime += Time.fixedDeltaTime;
+                yield return new WaitForFixedUpdate();
+            }
         }
     }
 }
