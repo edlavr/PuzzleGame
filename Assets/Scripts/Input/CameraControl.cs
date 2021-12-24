@@ -44,7 +44,7 @@ namespace Input
             transform.Rotate(Vector3.up * _lookX);
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             Look();
         }

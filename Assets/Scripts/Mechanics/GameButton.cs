@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Mechanics
 {
@@ -9,14 +10,16 @@ namespace Mechanics
         private Vector3 _initialY;
         private Vector3 _pressedY;
         private GameObject _button;
+        private IEnumerator _buttonCoroutine;
+        private readonly List<GameObject> _pressedBy = new List<GameObject>();
         [Header("Variables")]
         [SerializeField] private float pressHeight = 0.1f;
         [SerializeField] private float pressTime = 1f;
 
-        private IEnumerator _buttonCoroutine;
-    
-        private readonly List<GameObject> pressedBy = new List<GameObject>();
-
+        [Header("Actions")]
+        public UnityEvent OnButtonPress;
+        public UnityEvent OnButtonRelease;
+        
         private void Awake()
         {
             _button = transform.GetChild(0).gameObject;
@@ -26,19 +29,23 @@ namespace Mechanics
 
         private void OnTriggerEnter(Collider other)
         {
-            pressedBy.Add(other.gameObject);
+            _pressedBy.Add(other.gameObject);
             if (_buttonCoroutine != null)
             {
                 StopCoroutine(_buttonCoroutine);
             }
-            _buttonCoroutine = PressButton();
-            StartCoroutine(_buttonCoroutine);
+
+            if (_pressedBy.Count == 1)
+            {
+                _buttonCoroutine = PressButton();
+                StartCoroutine(_buttonCoroutine);
+            }
         }
 
         private void OnTriggerExit(Collider other)
         {
-            pressedBy.Remove(other.gameObject);
-            if (pressedBy.Count == 0)
+            _pressedBy.Remove(other.gameObject);
+            if (_pressedBy.Count == 0)
             {
                 StopCoroutine(_buttonCoroutine);
                 _buttonCoroutine = ReleaseButton();
@@ -49,6 +56,7 @@ namespace Mechanics
         private IEnumerator PressButton()
         {
             Debug.Log("press");
+            OnButtonPress.Invoke();
             _button.GetComponent<MeshRenderer>().material.color = Color.blue;
             float _currentTime = 0;
             while (_button.transform.position.y > _pressedY.y)
@@ -63,6 +71,7 @@ namespace Mechanics
         private IEnumerator ReleaseButton()
         {
             Debug.Log("release");
+            OnButtonRelease.Invoke();
             _button.GetComponent<MeshRenderer>().material.color = Color.red;
             float _currentTime = 0;
             while (_button.transform.position.y < _initialY.y)

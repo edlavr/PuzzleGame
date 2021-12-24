@@ -34,9 +34,9 @@ namespace Interaction.RecordSM
 
         public void ExitState(InteractableObj interactableObj)
         {
-            interactableObj.Material.SetColor("BaseColor", interactableObj.PaintColor);
-            interactableObj.Material.SetColor("PaintColor", interactableObj.BaseColor);
-            interactableObj.Material.SetFloat("Value", 0);
+            //interactableObj.Material.SetColor("BaseColor", interactableObj.PaintColor);
+            //interactableObj.Material.SetColor("PaintColor", interactableObj.BaseColor);
+            //interactableObj.Material.SetFloat("Value", 0);
         }
     }
 }

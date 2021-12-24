@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Mechanics
@@ -10,13 +12,8 @@ namespace Mechanics
         [Header("Variables")]
         [SerializeField] private float speed;
         [SerializeField] private MovingPlatformMode mode;
-        private int prevPoint;
-        private int currentPoint = 1;
-        private int multiplier = 1;
+        private int _pingPongValue = 1;
 
-        private float time;
-        private float timerem;
-        
 
         private enum MovingPlatformMode
         {
@@ -28,52 +25,54 @@ namespace Mechanics
         private void Awake()
         {
             platform.position = points[0].position;
-            time = Vector3.Distance(platform.position, points[currentPoint].position) / speed;
-        }
-        
-        private void PingPong(int min, int max)
-        {
-            if (currentPoint + 1 == max && multiplier == 1)
-            {
-                multiplier = -1;
-            }
-            else if (currentPoint == min && multiplier == -1)
-            {
-                multiplier = 1;
-            }
-            currentPoint += multiplier;
+            StartCoroutine(MovePlatform());
         }
 
-        private void FixedUpdate()
+        private IEnumerator MovePlatform()
         {
-            if (timerem < time)
+            int _currentPoint = 0;
+            while (true)
             {
-                Vector3 _currentPos = Vector3.Lerp(points[prevPoint].position, points[currentPoint].position, timerem/time);
-                timerem += Time.fixedDeltaTime;
-                rb.MovePosition(_currentPos);
-            }
-            else
-            {
-                timerem = 0;
-                platform.position = points[currentPoint].position;
-                prevPoint = currentPoint;
-                switch (mode)
+                platform.position = points[_currentPoint].position;
+                _currentPoint = GetNextPoint(_currentPoint);
+                //Debug.Log(_currentPoint);
+                Vector3 _direction = (points[_currentPoint].position - platform.position).normalized;
+
+                while (Vector3.Magnitude(platform.position - points[_currentPoint].position) > 0.01f)
                 {
-                    case MovingPlatformMode.Loop:
-                        currentPoint = (currentPoint + 1) % points.Length;
-                        break;
-                    case MovingPlatformMode.PingPong:
-                        PingPong(0, points.Length);
-                        break;
-                    case MovingPlatformMode.Reset when currentPoint != points.Length - 1:
-                        currentPoint++;
-                        break;
-                    case MovingPlatformMode.Reset:
-                        platform.position = points[0].position;
-                        currentPoint = 1;
-                        break;
+                    rb.MovePosition(platform.position + _direction * speed);
+                    yield return new WaitForFixedUpdate();
                 }
-                time = Vector3.Distance(platform.position, points[currentPoint].position) / speed;
+            }
+        }
+
+        private int GetNextPoint(int point)
+        {
+            switch (mode)
+            {
+                case MovingPlatformMode.Loop:
+                    return (point + 1) % points.Length;
+                
+                case MovingPlatformMode.PingPong:
+                    if (point + 1 == points.Length && _pingPongValue == 1)
+                    {
+                        _pingPongValue = -1;
+                    }
+                    else if (point == 0 && _pingPongValue == -1)
+                    {
+                        _pingPongValue = 1;
+                    }
+                    return point + _pingPongValue;
+                
+                case MovingPlatformMode.Reset when point != points.Length - 1:
+                    return point + 1;
+                
+                case MovingPlatformMode.Reset:
+                    platform.position = points[0].position;
+                    return 1;
+                
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
         }
     }

@@ -38,8 +38,8 @@ namespace Interaction
         // Material
         internal Material Material;
         public float ColorSpeed = .5f;
-        internal Color BaseColor;
-        internal Color PaintColor;
+        //internal Color BaseColor;
+        //internal Color PaintColor;
         private static readonly int BaseColorID = Shader.PropertyToID("BaseColor");
         private static readonly int PaintColorID = Shader.PropertyToID("PaintColor");
 
@@ -52,8 +52,8 @@ namespace Interaction
         {
             RB = GetComponent<Rigidbody>();
             Material = GetComponent<Renderer>().material;
-            BaseColor = Material.GetColor(BaseColorID);
-            PaintColor = Material.GetColor(PaintColorID);
+            //BaseColor = Material.GetColor(BaseColorID);
+            //PaintColor = Material.GetColor(PaintColorID);
         }
 
         private void Start()
@@ -90,12 +90,13 @@ namespace Interaction
 
         private void FixedUpdate()
         {
-            CurrentInteractState.UpdateState(this);
+            //CurrentInteractState.UpdateState(this);
         }
 
         private void Update()
         {
             CurrentRecordState.UpdateState(this);
+            CurrentInteractState.UpdateState(this);
         }
 
         public void RewindOrInterrupt()

@@ -37,10 +37,10 @@ namespace Interaction.RecordSM
 
         public void ExitState(InteractableObj interactableObj)
         {
-            interactableObj.Material.SetInt("IsRewind",0);
-            interactableObj.Material.SetColor("BaseColor", interactableObj.BaseColor);
-            interactableObj.Material.SetColor("PaintColor", interactableObj.PaintColor);
-            interactableObj.Material.SetFloat("Value", 0);
+            //interactableObj.Material.SetInt("IsRewind",0);
+            //interactableObj.Material.SetColor("BaseColor", interactableObj.BaseColor);
+            //interactableObj.Material.SetColor("PaintColor", interactableObj.PaintColor);
+            //interactableObj.Material.SetFloat("Value", 0);
             interactableObj.PointsInTime.Clear();
             //interactable.BC.enabled = true;
             interactableObj.gameObject.layer = 7;

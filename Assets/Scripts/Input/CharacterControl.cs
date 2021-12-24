@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ namespace Input
         [Header("Ground Check")]
         [SerializeField] private Transform _groundCheckPos;
         [SerializeField] private LayerMask GroundMask;
+        [SerializeField] private LayerMask PlatformMask;
 
         [Header("Variables")]
         [SerializeField] private float _speed = 5f; 
@@ -66,7 +68,6 @@ namespace Input
             var _transform = transform;
             if ((_moveX != 0f || _moveZ != 0f) && !launch)
             {
-                
                 _move = _transform.right * (_moveX * _speed) + _transform.forward * (_moveZ * _speed);
                 _RB.velocity = new Vector3(_move.x, _RB.velocity.y, _move.z);
             }
@@ -80,6 +81,7 @@ namespace Input
                 _RB.velocity += new Vector3(_move.x / 100, 0, _move.z / 100);
             }
 
+            _RB.velocity += PlatformVelocity();
         }
 
         public void Launch(Vector3 direction)
@@ -105,11 +107,22 @@ namespace Input
         {
             return Physics.CheckSphere(_groundCheckPos.position, .5f, GroundMask);
         }
+        
+        private Vector3 PlatformVelocity()
+        {
+            if (Physics.Raycast(_groundCheckPos.position, Vector3.down, out var _hit, 1.5f, PlatformMask))
+            {
+                return _hit.collider.GetComponent<Rigidbody>().velocity;
+            }
+
+            return Vector3.zero;
+        }
 
         private void GravityAndJump()
         {
             if (IsGrounded())
             {
+                Debug.Log("Jump!");
                 _RB.AddForce(new Vector3(0, _jumpVelocity, 0), ForceMode.VelocityChange);
             }
         }
@@ -131,7 +144,7 @@ namespace Input
             _rigidbody.velocity += _forceDirection * _forceMultiplier;
         }*/
         
-        private void FixedUpdate()
+        private void Update()
         {
             Walk();
         }
