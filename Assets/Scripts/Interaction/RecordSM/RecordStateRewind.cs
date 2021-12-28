@@ -18,11 +18,11 @@ namespace Interaction.RecordSM
 
         public void UpdateState(InteractableObj interactableObj)
         {
-            float _shaderValue = interactableObj.Material.GetFloat("Value");
-            if (_shaderValue < 1)
-            {
-                interactableObj.Material.SetFloat("Value", _shaderValue + _shaderValueDelta);
-            }
+            // float _shaderValue = interactableObj.Material.GetFloat("Value");
+            // if (_shaderValue < 1)
+            // {
+            //     interactableObj.Material.SetFloat("Value", _shaderValue + _shaderValueDelta);
+            // }
             interactableObj.RB.velocity = Vector3.zero;
             interactableObj.RB.angularVelocity = Vector3.zero;
             if (interactableObj.PointsInTime.Count != 0)

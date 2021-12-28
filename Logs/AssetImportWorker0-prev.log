@@ -1,0 +1,1115 @@
+Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.16f1 (049d6eca3c44) revision 302446'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home; OS build 22000.376; Version 2009; 64bit' Language: 'en' Physical Memory: 15774 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.16f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/Ed/Projects/Personal/PuzzleGame
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+61921
+Successfully changed project path to: C:/Users/Ed/Projects/Personal/PuzzleGame
+C:/Users/Ed/Projects/Personal/PuzzleGame
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 77.43 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.16f1 (049d6eca3c44)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/Ed/Projects/Personal/PuzzleGame/Assets
+GfxDevice: creating device client; threaded=0
+d3d12: loaded!
+Direct3D:
+    Version:         Direct3D 12 [level 12.1]
+    Renderer:        NVIDIA GeForce RTX 3070 Laptop GPU (ID=0x249d)
+    Vendor:          
+    VRAM:            8044 MB
+    App VRAM Budget: 7276 MB
+    Driver:          30.0.14.9649
+d3d12: Profiler is enabled, but stable power state is not. GPU timing errors are expected.
+
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56904
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001254 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 72.34 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.911 seconds
+Domain Reload Profiling:
+	ReloadAssembly (911ms)
+		BeginReloadAssembly (50ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (372ms)
+			LoadAssemblies (49ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (110ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (23ms)
+			SetupLoadedEditorAssemblies (180ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (72ms)
+				BeforeProcessingInitializeOnLoad (11ms)
+				ProcessInitializeOnLoadAttributes (70ms)
+				ProcessInitializeOnLoadMethodAttributes (23ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.005400 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 72.79 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.242 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1242ms)
+		BeginReloadAssembly (108ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (3ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (17ms)
+		EndReloadAssembly (1088ms)
+			LoadAssemblies (75ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (271ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (58ms)
+			SetupLoadedEditorAssemblies (590ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (73ms)
+				BeforeProcessingInitializeOnLoad (84ms)
+				ProcessInitializeOnLoadAttributes (299ms)
+				ProcessInitializeOnLoadMethodAttributes (126ms)
+				AfterProcessingInitializeOnLoad (4ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Shader 'Raymarching/UniversalRP_SphereBoxMorph_Lit': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Shader 'Raymarching/UniversalRP_SphereBoxMorph_Unlit': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Unlit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Unlit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Shader 'Raymarching/UniversalRP_HexFloor': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
+Shader 'Raymarching/UniversalRP_SphereBoxMorph_Unlit': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Unlit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Unlit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Shader 'Raymarching/UniversalRP_HexFloor': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
+Shader 'Raymarching/UniversalRP_SphereBoxMorph_Lit': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 0.84 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4163 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 213.8 MB.
+System memory in use after: 212.8 MB.
+
+Unloading 37 unused Assets to reduce memory usage. Loaded Objects now: 4602.
+Total: 9.884500 ms (FindLiveObjects: 0.601900 ms CreateObjectMapping: 0.253500 ms MarkObjects: 8.077900 ms  DeleteObjects: 0.949500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  path: Assets/uRaymarching/Examples/UniversalRP/Sphere Box Morph/UniversalRP_SphereBoxMorph_Unlit.asset
+  artifactKey: Guid(dc5cce12bd653415ea35eaec3333c63c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/UniversalRP/Sphere Box Morph/UniversalRP_SphereBoxMorph_Unlit.asset using Guid(dc5cce12bd653415ea35eaec3333c63c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Shader 'Raymarching/UniversalRP_SphereBoxMorph_Unlit': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Unlit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Unlit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+ -> (artifact id: 'b8456c18f7ba409927f215ac2d431116') in 0.059204 seconds 
+  Import took 0.070486 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000545 seconds.
+  path: Assets/uRaymarching/Examples/Common/Scripts/DebugCamera.cs
+  artifactKey: Guid(1e1d788dd3dab9a4b8210f49d807b7d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/Common/Scripts/DebugCamera.cs using Guid(1e1d788dd3dab9a4b8210f49d807b7d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bcc9c89b64d3dbdd2be7a7f33b75ed1c') in 0.007932 seconds 
+  Import took 0.015411 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002507 seconds.
+  path: Assets/uRaymarching/Examples/UniversalRP/Sphere Box Morph/UniversalRP_SphereBoxMorph_Lit.mat
+  artifactKey: Guid(57a8fe9995b5d468ab6f8bf6f49617a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/UniversalRP/Sphere Box Morph/UniversalRP_SphereBoxMorph_Lit.mat using Guid(57a8fe9995b5d468ab6f8bf6f49617a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Shader 'Raymarching/UniversalRP_SphereBoxMorph_Lit': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+ -> (artifact id: 'e9dd3b77ef2b7dfc9964b2dea62a1183') in 6.962575 seconds 
+  Import took 6.973184 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000470 seconds.
+  path: Assets/uRaymarching/Examples/UniversalRP/Sphere Box Morph/UniversalRP_SphereBoxMorph_Lit.asset
+  artifactKey: Guid(f641d17f498714b73844e253c234a894) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/UniversalRP/Sphere Box Morph/UniversalRP_SphereBoxMorph_Lit.asset using Guid(f641d17f498714b73844e253c234a894) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Shader 'Raymarching/UniversalRP_SphereBoxMorph_Lit': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+ -> (artifact id: '556124e4947b50a54c7773f26b9ae1d4') in 0.006553 seconds 
+  Import took 0.012972 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000423 seconds.
+  path: Assets/uRaymarching/Examples/UniversalRP/Sphere Box Morph/UniversalRP_SphereBoxMorph_Unlit.mat
+  artifactKey: Guid(d7151b6c84f33490c892ea2540b0326c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/UniversalRP/Sphere Box Morph/UniversalRP_SphereBoxMorph_Unlit.mat using Guid(d7151b6c84f33490c892ea2540b0326c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Shader 'Raymarching/UniversalRP_SphereBoxMorph_Unlit': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Unlit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Unlit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+ -> (artifact id: '3e89f88cf232f4340a15e00cb457f816') in 0.035679 seconds 
+  Import took 0.042658 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000465 seconds.
+  path: Assets/uRaymarching/Examples/UniversalRP/Sphere Box Morph/UniversalRP_SphereBoxMorph_Lit.asset
+  artifactKey: Guid(f641d17f498714b73844e253c234a894) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/UniversalRP/Sphere Box Morph/UniversalRP_SphereBoxMorph_Lit.asset using Guid(f641d17f498714b73844e253c234a894) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Shader 'Raymarching/UniversalRP_SphereBoxMorph_Lit': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+ -> (artifact id: '556124e4947b50a54c7773f26b9ae1d4') in 0.006072 seconds 
+  Import took 0.012828 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.185152 seconds.
+  path: Assets/uRaymarching/Examples/UniversalRP/Sphere Box Morph/UniversalRP_SphereBoxMorph_Unlit.mat
+  artifactKey: Guid(d7151b6c84f33490c892ea2540b0326c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/UniversalRP/Sphere Box Morph/UniversalRP_SphereBoxMorph_Unlit.mat using Guid(d7151b6c84f33490c892ea2540b0326c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Shader 'Raymarching/UniversalRP_SphereBoxMorph_Unlit': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Unlit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Unlit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+ -> (artifact id: '3e89f88cf232f4340a15e00cb457f816') in 0.025584 seconds 
+  Import took 0.033387 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 112.555032 seconds.
+  path: Assets/uRaymarching/Examples/Common/Scripts/Editor/GeneratorAssetImportProcessor.cs
+  artifactKey: Guid(24886b80d498af2469e5e317825f9852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/Common/Scripts/Editor/GeneratorAssetImportProcessor.cs using Guid(24886b80d498af2469e5e317825f9852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4993ebd294397b022e356c5d3ec5d4cb') in 0.002524 seconds 
+  Import took 0.010349 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 148.092491 seconds.
+  path: Assets/uRaymarching/Examples/Common/Scripts/Editor/GeneratorAssetImportProcessor.cs
+  artifactKey: Guid(24886b80d498af2469e5e317825f9852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/Common/Scripts/Editor/GeneratorAssetImportProcessor.cs using Guid(24886b80d498af2469e5e317825f9852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee0cd7d47a05a105216993387bb9a0e0') in 0.002708 seconds 
+  Import took 0.011503 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004759 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.89 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.302 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1302ms)
+		BeginReloadAssembly (187ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (26ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (53ms)
+		EndReloadAssembly (1060ms)
+			LoadAssemblies (93ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (304ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (62ms)
+			SetupLoadedEditorAssemblies (418ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (105ms)
+				ProcessInitializeOnLoadAttributes (292ms)
+				ProcessInitializeOnLoadMethodAttributes (11ms)
+				AfterProcessingInitializeOnLoad (4ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Shader 'Raymarching/UniversalRP_SphereBoxMorph_Lit': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Shader 'Raymarching/UniversalRP_SphereBoxMorph_Unlit': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Unlit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Unlit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Shader 'Raymarching/UniversalRP_HexFloor': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
+Shader 'Raymarching/UniversalRP_SphereBoxMorph_Unlit': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Unlit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Unlit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Shader 'Raymarching/UniversalRP_HexFloor': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
+Shader 'Raymarching/UniversalRP_SphereBoxMorph_Lit': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Refreshing native plugins compatible for Editor in 0.82 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3866 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 216.0 MB.
+System memory in use after: 214.9 MB.
+
+Unloading 30 unused Assets to reduce memory usage. Loaded Objects now: 4774.
+Total: 4.329300 ms (FindLiveObjects: 0.392900 ms CreateObjectMapping: 0.104500 ms MarkObjects: 3.202400 ms  DeleteObjects: 0.628300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 19.061331 seconds.
+  path: Assets/uRaymarching/Examples/UniversalRP
+  artifactKey: Guid(0303735e1ae8a440797f26648eb48293) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/UniversalRP using Guid(0303735e1ae8a440797f26648eb48293) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1969ab970c9381bca0e5704baae8a467') in 0.006541 seconds 
+  Import took 0.014041 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.612977 seconds.
+  path: Assets/uRaymarching/Examples/Common
+  artifactKey: Guid(999de389369688a4ea01e2f068bd6948) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/Common using Guid(999de389369688a4ea01e2f068bd6948) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7186ad0414ccda0c5084b9469ed17ec6') in 0.002170 seconds 
+  Import took 0.007941 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.013771 seconds.
+  path: Assets/uRaymarching/Examples/UniversalRP/Sphere Box Morph
+  artifactKey: Guid(0bf7d19f14156456c9a3fad51d81e2e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/UniversalRP/Sphere Box Morph using Guid(0bf7d19f14156456c9a3fad51d81e2e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '835018af335b30b51988f5b74249e9e2') in 0.002427 seconds 
+  Import took 0.008509 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.632144 seconds.
+  path: Assets/uRaymarching/Examples/UniversalRP/Sphere Box Morph/Sphere Box Morph.unity
+  artifactKey: Guid(3636e84f0a12943d2b37db2b3fc04adc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/UniversalRP/Sphere Box Morph/Sphere Box Morph.unity using Guid(3636e84f0a12943d2b37db2b3fc04adc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '473d59c491fed7b67a6aec327935b868') in 0.009082 seconds 
+  Import took 0.015237 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004816 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.82 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.234 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1234ms)
+		BeginReloadAssembly (122ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (38ms)
+		EndReloadAssembly (1059ms)
+			LoadAssemblies (88ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (310ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (59ms)
+			SetupLoadedEditorAssemblies (417ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (93ms)
+				ProcessInitializeOnLoadAttributes (306ms)
+				ProcessInitializeOnLoadMethodAttributes (8ms)
+				AfterProcessingInitializeOnLoad (4ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (16ms)
+Platform modules already initialized, skipping
+Shader 'Raymarching/UniversalRP_SphereBoxMorph_Lit': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Shader 'Raymarching/UniversalRP_SphereBoxMorph_Unlit': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Unlit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Unlit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Shader 'Raymarching/UniversalRP_HexFloor': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
+Shader 'Raymarching/UniversalRP_SphereBoxMorph_Lit': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Shader 'Raymarching/UniversalRP_SphereBoxMorph_Unlit': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Unlit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Unlit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Shader 'Raymarching/UniversalRP_HexFloor': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
+Refreshing native plugins compatible for Editor in 0.81 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3853 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 220.3 MB.
+System memory in use after: 219.3 MB.
+
+Unloading 30 unused Assets to reduce memory usage. Loaded Objects now: 4776.
+Total: 5.695400 ms (FindLiveObjects: 0.619400 ms CreateObjectMapping: 0.186700 ms MarkObjects: 4.042100 ms  DeleteObjects: 0.845000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 148.427687 seconds.
+  path: Assets/uRaymarching/Examples/UniversalRP/Sphere Box Morph/UniversalRP_SphereBoxMorph_Lit.shader
+  artifactKey: Guid(c05803c4ba37842bebdebfc4688a7579) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/UniversalRP/Sphere Box Morph/UniversalRP_SphereBoxMorph_Lit.shader using Guid(c05803c4ba37842bebdebfc4688a7579) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Shader 'Raymarching/UniversalRP_SphereBoxMorph_Lit': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+ -> (artifact id: '5580b3704c65f72824916dbbdaaa9230') in 0.020631 seconds 
+  Import took 0.027423 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.130773 seconds.
+  path: Assets/uRaymarching/Examples/UniversalRP/Sphere Box Morph/UniversalRP_SphereBoxMorph_Lit.shader
+  artifactKey: Guid(c05803c4ba37842bebdebfc4688a7579) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/UniversalRP/Sphere Box Morph/UniversalRP_SphereBoxMorph_Lit.shader using Guid(c05803c4ba37842bebdebfc4688a7579) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Shader 'Raymarching/UniversalRP_SphereBoxMorph_Lit': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+ -> (artifact id: '5580b3704c65f72824916dbbdaaa9230') in 0.004463 seconds 
+  Import took 0.010706 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.147602 seconds.
+  path: Assets/uRaymarching/Examples/UniversalRP/Sphere Box Morph/UniversalRP_SphereBoxMorph_Unlit.shader
+  artifactKey: Guid(4fecff0e10b5e4afaa2a62be1a6010b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/UniversalRP/Sphere Box Morph/UniversalRP_SphereBoxMorph_Unlit.shader using Guid(4fecff0e10b5e4afaa2a62be1a6010b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Shader 'Raymarching/UniversalRP_SphereBoxMorph_Unlit': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Unlit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Unlit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+ -> (artifact id: '9e9651d06b7b664891f46deb58419707') in 0.006702 seconds 
+  Import took 0.012895 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.592997 seconds.
+  path: Assets/uRaymarching/Examples/Forward
+  artifactKey: Guid(e566a4f0a3d2e4c8488adbea8e635b08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/Forward using Guid(e566a4f0a3d2e4c8488adbea8e635b08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ede074b6e24392d6ab938ef1edccc8ca') in 0.002429 seconds 
+  Import took 0.008323 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.710287 seconds.
+  path: Assets/uRaymarching/Examples/Forward/Hex Floor
+  artifactKey: Guid(3028a9181d9c8fb449577475936fb87c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/Forward/Hex Floor using Guid(3028a9181d9c8fb449577475936fb87c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f4d211b72a18c741fd32bd3ff3b32fd') in 0.002574 seconds 
+  Import took 0.008813 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.361559 seconds.
+  path: Assets/uRaymarching/Examples/Forward/Hex Floor/Forward_HexFloor.asset
+  artifactKey: Guid(4c35975b8432a214fa20f189b8b510f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/Forward/Hex Floor/Forward_HexFloor.asset using Guid(4c35975b8432a214fa20f189b8b510f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b81c07b85c114cd99c0683007bdcc8c0') in 0.049118 seconds 
+  Import took 0.055339 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000449 seconds.
+  path: Assets/uRaymarching/Examples/Forward/Hex Floor/Forward_HexFloor.mat
+  artifactKey: Guid(74bc57ea1f6301842a8b339f18dbfd81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/Forward/Hex Floor/Forward_HexFloor.mat using Guid(74bc57ea1f6301842a8b339f18dbfd81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52d0178b9cd16922938df8a5d37f034f') in 0.595139 seconds 
+  Import took 0.601728 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.800866 seconds.
+  path: Assets/uRaymarching/Examples/Forward/Hex Floor/Hex Floor.unity
+  artifactKey: Guid(39d6c913612d48e499a04056285b9a49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/Forward/Hex Floor/Hex Floor.unity using Guid(39d6c913612d48e499a04056285b9a49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45a698b3f9e39aa9f8a1e8e553c482a7') in 0.002428 seconds 
+  Import took 0.009775 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 21.851722 seconds.
+  path: Assets/uRaymarching/Examples/Forward/Hex Floor/Forward_HexFloor.shader
+  artifactKey: Guid(1e55b0465e75aa84bae30bddad6a85b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/Forward/Hex Floor/Forward_HexFloor.shader using Guid(1e55b0465e75aa84bae30bddad6a85b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3062da82f3d3cf55b9733f021e372980') in 0.004443 seconds 
+  Import took 0.011434 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002783 seconds.
+  path: Assets/uRaymarching/Examples/Forward/Hex Floor/Forward_HexFloor.shader
+  artifactKey: Guid(1e55b0465e75aa84bae30bddad6a85b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/Forward/Hex Floor/Forward_HexFloor.shader using Guid(1e55b0465e75aa84bae30bddad6a85b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3062da82f3d3cf55b9733f021e372980') in 0.003724 seconds 
+  Import took 0.009886 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 18.341968 seconds.
+  path: Assets/uRaymarching/Examples/Forward/Lighting
+  artifactKey: Guid(c72e779fed917834a9d2e8e898fcb0fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/Forward/Lighting using Guid(c72e779fed917834a9d2e8e898fcb0fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'beff2a70535c4338943226af55d0fee0') in 0.002531 seconds 
+  Import took 0.009548 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.370371 seconds.
+  path: Assets/uRaymarching/Examples/Forward/Lighting/Forward_Sphere.asset
+  artifactKey: Guid(d351eb7338dc79147a13ffb5085b1c6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/Forward/Lighting/Forward_Sphere.asset using Guid(d351eb7338dc79147a13ffb5085b1c6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63833a90c5c5ce729bcbc105a32bd523') in 0.004344 seconds 
+  Import took 0.010752 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000399 seconds.
+  path: Assets/uRaymarching/Examples/Forward/Lighting/Forward_Sphere.mat
+  artifactKey: Guid(141b13bae7de05a47baf4085d7b5398e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/Forward/Lighting/Forward_Sphere.mat using Guid(141b13bae7de05a47baf4085d7b5398e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f92f32c3e59149fefa15cd85a6ed0d5e') in 0.030720 seconds 
+  Import took 0.037495 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.838781 seconds.
+  path: Assets/uRaymarching/Examples/Forward/Lighting/Forward_Sphere.shader
+  artifactKey: Guid(00455a7e49d41954795618b9f10b9a0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/Forward/Lighting/Forward_Sphere.shader using Guid(00455a7e49d41954795618b9f10b9a0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45a43659f9831f104b2d4dc1bafcc1e3') in 0.005428 seconds 
+  Import took 0.011714 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 14.523934 seconds.
+  path: Assets/uRaymarching/Examples/Forward/Mod World for VR
+  artifactKey: Guid(fc622490392f3a2449f1355fd1f1b3e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/Forward/Mod World for VR using Guid(fc622490392f3a2449f1355fd1f1b3e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5289b6e17d51834b8cbdcb2a4171def') in 0.002470 seconds 
+  Import took 0.008008 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.564588 seconds.
+  path: Assets/uRaymarching/Examples/Forward/Mod World for VR/Forward_ModWorld_for_VR.asset
+  artifactKey: Guid(8803c859f8fc81f409c2c1c9fbee71eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/Forward/Mod World for VR/Forward_ModWorld_for_VR.asset using Guid(8803c859f8fc81f409c2c1c9fbee71eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a8fb6954e91e9457277acd1b2753781') in 0.003415 seconds 
+  Import took 0.009290 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000405 seconds.
+  path: Assets/uRaymarching/Examples/Forward/Mod World for VR/Forward_ModWorld_for_VR.mat
+  artifactKey: Guid(7180db233e0d83d4d9e6e282e08839c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/Forward/Mod World for VR/Forward_ModWorld_for_VR.mat using Guid(7180db233e0d83d4d9e6e282e08839c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a4cb3c3bec5d52f5da66d30da78cace') in 0.029647 seconds 
+  Import took 0.035337 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.920478 seconds.
+  path: Assets/uRaymarching/Examples/Forward/Mod World
+  artifactKey: Guid(35406ee4aa859ec4aae63d4b8d1b7ded) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/Forward/Mod World using Guid(35406ee4aa859ec4aae63d4b8d1b7ded) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a67717b53926af2addd29fbb79aed4fc') in 0.002306 seconds 
+  Import took 0.010059 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.330772 seconds.
+  path: Assets/uRaymarching/Examples/Forward/Mod World/Forward_ModWorld.asset
+  artifactKey: Guid(451d13a3d39d1634395242c994de0ced) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/Forward/Mod World/Forward_ModWorld.asset using Guid(451d13a3d39d1634395242c994de0ced) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e5aee1b4e37fefc9a6b7d5f41024207') in 0.004917 seconds 
+  Import took 0.011456 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000414 seconds.
+  path: Assets/uRaymarching/Examples/Forward/Mod World/Forward_ModWorld.mat
+  artifactKey: Guid(307a5d9d0227b3e4c9b52a5db077cda2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/Forward/Mod World/Forward_ModWorld.mat using Guid(307a5d9d0227b3e4c9b52a5db077cda2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '235c431be2ad252f3a90a4cd361696bf') in 0.029087 seconds 
+  Import took 0.035074 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.960609 seconds.
+  path: Assets/uRaymarching/Examples/Forward/Sphere Box Morph
+  artifactKey: Guid(fabf87039db394a89a159f548b9ff8fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/Forward/Sphere Box Morph using Guid(fabf87039db394a89a159f548b9ff8fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b067612c11783ceb94970b5f1b1b755') in 0.002148 seconds 
+  Import took 0.009612 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.759103 seconds.
+  path: Assets/uRaymarching/Examples/Forward/Sphere Box Morph/SphereBoxMorphForwardStandard.asset
+  artifactKey: Guid(a7c41c2771a3f45d0addfe68e340fbd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/Forward/Sphere Box Morph/SphereBoxMorphForwardStandard.asset using Guid(a7c41c2771a3f45d0addfe68e340fbd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d2f687d3ba20501b7c3768bd51b70e3') in 0.004598 seconds 
+  Import took 0.011124 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000402 seconds.
+  path: Assets/uRaymarching/Examples/Forward/Sphere Box Morph/SphereBoxMorphForwardUnlit.asset
+  artifactKey: Guid(c253bbd67b8df4d4498a1a70018f4f9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/Forward/Sphere Box Morph/SphereBoxMorphForwardUnlit.asset using Guid(c253bbd67b8df4d4498a1a70018f4f9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ecd6798a30a6398513c11843ce98bce0') in 0.003550 seconds 
+  Import took 0.008777 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000421 seconds.
+  path: Assets/uRaymarching/Examples/Forward/Sphere Box Morph/SphereBoxMorphForwardUnlit.mat
+  artifactKey: Guid(8647309c103404c5db554d2db0c75135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/Forward/Sphere Box Morph/SphereBoxMorphForwardUnlit.mat using Guid(8647309c103404c5db554d2db0c75135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5fa99833d8da91a2fbc2fab794c696c0') in 0.027498 seconds 
+  Import took 0.033495 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000394 seconds.
+  path: Assets/uRaymarching/Examples/Forward/Sphere Box Morph/SphereBoxMorphForwardStandardTrasnparent.asset
+  artifactKey: Guid(a981844cd925b4ba3b141fe31fc6661e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/Forward/Sphere Box Morph/SphereBoxMorphForwardStandardTrasnparent.asset using Guid(a981844cd925b4ba3b141fe31fc6661e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eeaa0cf52d803558f91a51b53eaf6b7a') in 0.004864 seconds 
+  Import took 0.010981 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000402 seconds.
+  path: Assets/uRaymarching/Examples/Forward/Sphere Box Morph/SphereBoxMorphForwardStandardTransparent.mat
+  artifactKey: Guid(7caf72ac1f8e142f7bf18738c1e66337) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/Forward/Sphere Box Morph/SphereBoxMorphForwardStandardTransparent.mat using Guid(7caf72ac1f8e142f7bf18738c1e66337) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32fcee0cf6ee1304e5733355365f74d9') in 0.026010 seconds 
+  Import took 0.032309 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000408 seconds.
+  path: Assets/uRaymarching/Examples/Forward/Sphere Box Morph/SphereBoxMorphForwardStandard.mat
+  artifactKey: Guid(1f13de122acd04deeb0934120d1721a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/Forward/Sphere Box Morph/SphereBoxMorphForwardStandard.mat using Guid(1f13de122acd04deeb0934120d1721a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ea588ffb0b32d6e98211ab5f0fc456e') in 0.029394 seconds 
+  Import took 0.035966 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.767504 seconds.
+  path: Assets/uRaymarching/Examples
+  artifactKey: Guid(45f32a62e9c3e934eb7bb0c3bbb559fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples using Guid(45f32a62e9c3e934eb7bb0c3bbb559fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '560c4cfd9e37e5665825fbf069f5320b') in 0.002512 seconds 
+  Import took 0.009986 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.509723 seconds.
+  path: Assets/uRaymarching/Examples/Deferred
+  artifactKey: Guid(c686cd7ed9f1d4568b0bad9fdfcb0f58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/Deferred using Guid(c686cd7ed9f1d4568b0bad9fdfcb0f58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4b7c9a04faa34493a81bb261464c357') in 0.002359 seconds 
+  Import took 0.009035 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.010282 seconds.
+  path: Assets/uRaymarching/Examples/Deferred/Hex Floor
+  artifactKey: Guid(30ed6f201518e4446a56b51189d483bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/Deferred/Hex Floor using Guid(30ed6f201518e4446a56b51189d483bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c95bcae1e4b8ec4beef39aaa3dfdc65a') in 0.002191 seconds 
+  Import took 0.017363 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.472517 seconds.
+  path: Assets/uRaymarching/Examples/Deferred/Hex Floor/Deferred_HexFloor.asset
+  artifactKey: Guid(d269b7ea8988dc645a9521700c709611) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/Deferred/Hex Floor/Deferred_HexFloor.asset using Guid(d269b7ea8988dc645a9521700c709611) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00d21e11ae09a840a941cc2aa92a91e6') in 0.003883 seconds 
+  Import took 0.010342 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000363 seconds.
+  path: Assets/uRaymarching/Examples/Deferred/Hex Floor/Deferred_HexFloor.mat
+  artifactKey: Guid(2c5c8644543830147b5191b9ed43c252) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/Deferred/Hex Floor/Deferred_HexFloor.mat using Guid(2c5c8644543830147b5191b9ed43c252) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23681ed9dcd06d01094fc162d45bcb79') in 0.025483 seconds 
+  Import took 0.031246 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.957244 seconds.
+  path: Assets/uRaymarching/Examples/Deferred/Hex Floor/Deffered_HexFloor.shader
+  artifactKey: Guid(72fcc89d305e5304ab855bd41b38acce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/uRaymarching/Examples/Deferred/Hex Floor/Deffered_HexFloor.shader using Guid(72fcc89d305e5304ab855bd41b38acce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29b7e44d2f7d43ce9cb49f3493ec4737') in 0.004053 seconds 
+  Import took 0.011286 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004338 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.13 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.126 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1127ms)
+		BeginReloadAssembly (144ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (23ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (50ms)
+		EndReloadAssembly (942ms)
+			LoadAssemblies (68ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (260ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (48ms)
+			SetupLoadedEditorAssemblies (396ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (94ms)
+				ProcessInitializeOnLoadAttributes (282ms)
+				ProcessInitializeOnLoadMethodAttributes (11ms)
+				AfterProcessingInitializeOnLoad (4ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (17ms)
+Platform modules already initialized, skipping
+Shader 'Raymarching/UniversalRP_SphereBoxMorph_Lit': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Shader 'Raymarching/UniversalRP_SphereBoxMorph_Unlit': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Unlit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Unlit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Shader 'Raymarching/UniversalRP_HexFloor': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
+Shader 'Raymarching/UniversalRP_HexFloor': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
+Shader 'Raymarching/UniversalRP_SphereBoxMorph_Lit': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Shader 'Raymarching/UniversalRP_SphereBoxMorph_Unlit': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Unlit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Unlit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Refreshing native plugins compatible for Editor in 0.82 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3853 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 225.3 MB.
+System memory in use after: 224.7 MB.
+
+Unloading 29 unused Assets to reduce memory usage. Loaded Objects now: 4882.
+Total: 4.119300 ms (FindLiveObjects: 0.342900 ms CreateObjectMapping: 0.098900 ms MarkObjects: 3.102500 ms  DeleteObjects: 0.573600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 172.938230 seconds.
+  path: Assets/Scenes/Test/Mechanics test/Mechanics test.unity
+  artifactKey: Guid(766e2002f78eabc49b9bf51a5b83b96d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Test/Mechanics test/Mechanics test.unity using Guid(766e2002f78eabc49b9bf51a5b83b96d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '684f204af653f9f36ec009ad5424de7a') in 0.012825 seconds 
+  Import took 0.020662 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004623 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.84 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.042 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1042ms)
+		BeginReloadAssembly (114ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (33ms)
+		EndReloadAssembly (885ms)
+			LoadAssemblies (78ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (242ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (48ms)
+			SetupLoadedEditorAssemblies (360ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (80ms)
+				ProcessInitializeOnLoadAttributes (261ms)
+				ProcessInitializeOnLoadMethodAttributes (10ms)
+				AfterProcessingInitializeOnLoad (4ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (15ms)
+Platform modules already initialized, skipping
+Shader 'Raymarching/UniversalRP_SphereBoxMorph_Lit': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Shader 'Raymarching/UniversalRP_SphereBoxMorph_Unlit': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Unlit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Unlit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Shader 'Raymarching/UniversalRP_HexFloor': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
+Shader 'Raymarching/UniversalRP_SphereBoxMorph_Unlit': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Unlit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Unlit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Shader 'Raymarching/UniversalRP_HexFloor': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
+Shader 'Raymarching/UniversalRP_SphereBoxMorph_Lit': fallback shader 'Hidden/Universal Render Pipeline/FallbackError' not found
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Raymarching/UniversalRP_SphereBoxMorph_Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Refreshing native plugins compatible for Editor in 0.83 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3852 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 230.1 MB.
+System memory in use after: 229.4 MB.
+
+Unloading 29 unused Assets to reduce memory usage. Loaded Objects now: 4884.
+Total: 4.580500 ms (FindLiveObjects: 0.459300 ms CreateObjectMapping: 0.152100 ms MarkObjects: 3.364800 ms  DeleteObjects: 0.602700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004401 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.79 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.151 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1151ms)
+		BeginReloadAssembly (114ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (38ms)
+		EndReloadAssembly (983ms)
+			LoadAssemblies (85ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (278ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (59ms)
+			SetupLoadedEditorAssemblies (374ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (89ms)
+				ProcessInitializeOnLoadAttributes (269ms)
+				ProcessInitializeOnLoadMethodAttributes (8ms)
+				AfterProcessingInitializeOnLoad (4ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (16ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.82 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3832 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 232.2 MB.
+System memory in use after: 232.4 MB.
+
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 4883.
+Total: 5.016900 ms (FindLiveObjects: 0.370900 ms CreateObjectMapping: 0.143100 ms MarkObjects: 4.474100 ms  DeleteObjects: 0.027700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004094 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.86 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.142 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1143ms)
+		BeginReloadAssembly (101ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (33ms)
+		EndReloadAssembly (993ms)
+			LoadAssemblies (80ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (301ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (55ms)
+			SetupLoadedEditorAssemblies (378ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (87ms)
+				ProcessInitializeOnLoadAttributes (275ms)
+				ProcessInitializeOnLoadMethodAttributes (7ms)
+				AfterProcessingInitializeOnLoad (4ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (17ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.99 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3818 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 236.5 MB.
+System memory in use after: 236.7 MB.
+
+Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 4885.
+Total: 3.840300 ms (FindLiveObjects: 0.461300 ms CreateObjectMapping: 0.147500 ms MarkObjects: 3.209600 ms  DeleteObjects: 0.020800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 135.224314 seconds.
+  path: Assets/HDRPDefaultResources/DefaultLookDevProfile.asset
+  artifactKey: Guid(0a64f39a0e3a9a7409180197e9288939) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HDRPDefaultResources/DefaultLookDevProfile.asset using Guid(0a64f39a0e3a9a7409180197e9288939) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'babdf54cb3a75d59f3445006366c6442') in 0.013850 seconds 
+  Import took 0.020811 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000407 seconds.
+  path: Assets/HDRPDefaultResources/HDRenderPipelineAsset.asset
+  artifactKey: Guid(47677e70089d2e7468b5af76ad64c161) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HDRPDefaultResources/HDRenderPipelineAsset.asset using Guid(47677e70089d2e7468b5af76ad64c161) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24701d7634671b3e5296fcc46c3f8cfa') in 0.003585 seconds 
+  Import took 0.009547 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000395 seconds.
+  path: Assets/HDRPDefaultResources/DefaultSettingsVolumeProfile.asset
+  artifactKey: Guid(66d57a8a7f5aeb347855c9cd26bb60c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HDRPDefaultResources/DefaultSettingsVolumeProfile.asset using Guid(66d57a8a7f5aeb347855c9cd26bb60c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6e3b0648c548718b88cca33a3e0c6ac') in 0.078799 seconds 
+  Import took 0.084808 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.266786 seconds.
+  path: Assets/Samples/High Definition RP
+  artifactKey: Guid(87eaa367d07167a4c9a4bc1a2562c14f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Samples/High Definition RP using Guid(87eaa367d07167a4c9a4bc1a2562c14f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cfd7776a9818f07a512f6455a14043c9') in 0.002199 seconds 
+  Import took 0.008136 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.007415 seconds.
+  path: Assets/Samples/High Definition RP
+  artifactKey: Guid(87eaa367d07167a4c9a4bc1a2562c14f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Samples/High Definition RP using Guid(87eaa367d07167a4c9a4bc1a2562c14f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cfd7776a9818f07a512f6455a14043c9') in 0.001915 seconds 
+  Import took 0.007989 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

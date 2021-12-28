@@ -122,7 +122,6 @@ namespace Input
         {
             if (IsGrounded())
             {
-                Debug.Log("Jump!");
                 _RB.AddForce(new Vector3(0, _jumpVelocity, 0), ForceMode.VelocityChange);
             }
         }

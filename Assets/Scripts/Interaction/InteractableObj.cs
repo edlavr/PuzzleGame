@@ -25,11 +25,11 @@ namespace Interaction
         public GameObject interactableDest;
         internal Rigidbody RB;
         [Header("Variables")]
-        public float MinSpeed = 1;
-        public float MaxSpeed = 10;
-        public float RotSpeed = 10;
-        public float MaxDistance = 3f;
-        public float BreakDistance = 10f;
+        public float MinSpeed = 100;
+        public float MaxSpeed = 4000;
+        public float RotSpeed = 500;
+        public float MaxDistance = 1.5f;
+        public float BreakDistance = 3f;
 
         // Rewind
         internal readonly List<PointInTime> PointsInTime = new List<PointInTime>();
@@ -86,11 +86,6 @@ namespace Interaction
             CurrentRecordState.ExitState(this);
             CurrentRecordState = state;
             CurrentRecordState.EnterState(this);
-        }
-
-        private void FixedUpdate()
-        {
-            //CurrentInteractState.UpdateState(this);
         }
 
         private void Update()

@@ -14,11 +14,11 @@ namespace Interaction.RecordSM
 
         public void UpdateState(InteractableObj interactableObj)
         {
-            float _shaderValue = interactableObj.Material.GetFloat("Value");
-            if (_shaderValue < 1)
-            {
-                interactableObj.Material.SetFloat("Value", _shaderValue + Time.deltaTime * interactableObj.ColorSpeed);
-            }
+            // float _shaderValue = interactableObj.Material.GetFloat("Value");
+            // if (_shaderValue < 1)
+            // {
+            //     interactableObj.Material.SetFloat("Value", _shaderValue + Time.deltaTime * interactableObj.ColorSpeed);
+            // }
             _transform = interactableObj.transform;
             PointInTime _currentPointInTime = new PointInTime(_transform.position, _transform.rotation);
             if (!IsSamePoint(interactableObj.PointsInTime[0], _currentPointInTime))

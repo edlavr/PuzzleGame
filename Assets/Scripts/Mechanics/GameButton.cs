@@ -55,7 +55,7 @@ namespace Mechanics
 
         private IEnumerator PressButton()
         {
-            Debug.Log("press");
+            //Debug.Log("press");
             OnButtonPress.Invoke();
             _button.GetComponent<MeshRenderer>().material.color = Color.blue;
             float _currentTime = 0;
@@ -70,7 +70,7 @@ namespace Mechanics
     
         private IEnumerator ReleaseButton()
         {
-            Debug.Log("release");
+            //Debug.Log("release");
             OnButtonRelease.Invoke();
             _button.GetComponent<MeshRenderer>().material.color = Color.red;
             float _currentTime = 0;
