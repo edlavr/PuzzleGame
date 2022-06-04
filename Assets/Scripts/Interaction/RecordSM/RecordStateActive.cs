@@ -2,28 +2,30 @@ using UnityEngine;
 
 namespace Interaction.RecordSM
 {
-    public class RecordStateActive : IStateMachine<InteractableObj>
+    public class RecordStateActive : IStateMachine<Recordable>
     {
         private Transform _transform;
 
-        public void EnterState(InteractableObj interactableObj)
+        public void EnterState(Recordable recordable)
         {
-            _transform = interactableObj.transform;
-            interactableObj.PointsInTime.Add(new PointInTime(_transform.position, _transform.rotation));
+            recordable.Material.shader = Shader.Find("HDRP/Lit");
+            recordable.Material.SetColor("_BaseColor", Color.red);
+            _transform = recordable.transform;
+            recordable.PointsInTime.Add(new PointInTime(_transform.position, _transform.rotation));
         }
 
-        public void UpdateState(InteractableObj interactableObj)
+        public void UpdateState(Recordable recordable)
         {
             // float _shaderValue = interactableObj.Material.GetFloat("Value");
             // if (_shaderValue < 1)
             // {
             //     interactableObj.Material.SetFloat("Value", _shaderValue + Time.deltaTime * interactableObj.ColorSpeed);
             // }
-            _transform = interactableObj.transform;
+            _transform = recordable.transform;
             PointInTime _currentPointInTime = new PointInTime(_transform.position, _transform.rotation);
-            if (!IsSamePoint(interactableObj.PointsInTime[0], _currentPointInTime))
+            if (!IsSamePoint(recordable.PointsInTime[0], _currentPointInTime))
             { 
-                interactableObj.PointsInTime.Insert(0, _currentPointInTime);
+                recordable.PointsInTime.Insert(0, _currentPointInTime);
             }
         }
 
@@ -32,8 +34,9 @@ namespace Interaction.RecordSM
             return p1.Position == p2.Position && p1.Rotation == p2.Rotation;
         }
 
-        public void ExitState(InteractableObj interactableObj)
+        public void ExitState(Recordable recordable)
         {
+            
             //interactableObj.Material.SetColor("BaseColor", interactableObj.PaintColor);
             //interactableObj.Material.SetColor("PaintColor", interactableObj.BaseColor);
             //interactableObj.Material.SetFloat("Value", 0);

@@ -65,6 +65,10 @@ namespace Input
 
         private void Walk()
         {
+            if (launch)
+            {
+                return;
+            }
             var _transform = transform;
             if ((_moveX != 0f || _moveZ != 0f) && !launch)
             {
@@ -95,7 +99,7 @@ namespace Input
 
         private IEnumerator UpdateLaunchBool()
         {
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.3f);
             while (!IsGrounded())
             {
                 yield return null;

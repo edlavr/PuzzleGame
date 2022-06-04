@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
 using Interaction;
-using Interaction.InteractionSM;
+using Interaction.InteractionManagerSM;
 using UnityEngine;
 
 namespace UI
@@ -17,25 +17,25 @@ namespace UI
 
         private void OnEnable()
         {
-            InteractionStateBase.OnInteractionStateChanged += ChangeAlpha;
+            InteractionManagerStateBase.OnInteractionStateChanged += ChangeAlpha;
         }
         
         private void OnDisable()
         {
-            InteractionStateBase.OnInteractionStateChanged -= ChangeAlpha;
+            InteractionManagerStateBase.OnInteractionStateChanged -= ChangeAlpha;
         }
 
-        private void ChangeAlpha(InteractionStateBase interactionStateBase)
+        private void ChangeAlpha(InteractionManagerStateBase interactionManagerStateBase)
         {
-            if (interactionStateBase.GetType() == typeof(InteractionStateIdle))
+            if (interactionManagerStateBase.GetType() == typeof(InteractionManagerStateIdle))
             {
                 _crosshairAlpha.alpha = .3f;
             }
-            else if (interactionStateBase.GetType() == typeof(InteractionStateReady))
+            else if (interactionManagerStateBase.GetType() == typeof(InteractionManagerStateReady))
             {
                 _crosshairAlpha.alpha = 1f;
             }
-            else if (interactionStateBase.GetType() == typeof(InteractionStateActive))
+            else if (interactionManagerStateBase.GetType() == typeof(InteractionManagerStateActive))
             {
                 _crosshairAlpha.alpha = 0f;
             }

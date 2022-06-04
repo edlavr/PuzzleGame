@@ -1,11 +1,12 @@
 using System.Collections.Generic;
 using Input;
-using Interaction.InteractionSM;
+using Interaction.InteractionManagerSM;
+using Interaction.RecordSM;
 using UnityEngine;
 
 namespace Interaction
 {
-    public class InteractionControl : MonoBehaviour
+    public class InteractionManager : MonoBehaviour
     {
         internal bool IsInteractPressed;
         internal bool InteractionBroken;
@@ -13,13 +14,12 @@ namespace Interaction
         internal bool IsRecordPressed;
         internal bool IsRewindPressed;
 
-        internal readonly HashSet<InteractableObj> RecordedInteractableObjs = new HashSet<InteractableObj>();
+        internal readonly HashSet<Recordable> RecordedInteractableObjs = new HashSet<Recordable>();
 
         private Camera _mainCamera;
         [SerializeField] private LayerMask _interactableMask;
 
         [Header("Variables")]
-        [SerializeField] private float _castRadius = 1f;
         [SerializeField] private float _castDistance = 10f;
 
         private RaycastHit _castHit;
@@ -27,14 +27,14 @@ namespace Interaction
         private bool _isHit;
     
         // Interaction State Machine
-        private InteractionStateBase _currentState;
-        internal readonly InteractionStateIdle IdleState = new InteractionStateIdle();
-        internal readonly InteractionStateReady ReadyState = new InteractionStateReady();
-        internal readonly InteractionStateActive ActiveState = new InteractionStateActive();
+        private InteractionManagerStateBase _currentManagerState;
+        internal readonly InteractionManagerStateIdle IdleManagerState = new InteractionManagerStateIdle();
+        internal readonly InteractionManagerStateReady ReadyManagerState = new InteractionManagerStateReady();
+        internal readonly InteractionManagerStateActive ActiveManagerState = new InteractionManagerStateActive();
 
         private void Start()
         {
-            ChangeState(IdleState);
+            ChangeState(IdleManagerState);
         }
     
         private void OnEnable()
@@ -71,16 +71,16 @@ namespace Interaction
             IsRewindPressed = true;
         }
 
-        public void ChangeState(InteractionStateBase state)
+        public void ChangeState(InteractionManagerStateBase managerState)
         {
-            _currentState?.ExitState(this);
-            _currentState = state;
-            _currentState.EnterState(this);
+            _currentManagerState?.ExitState(this);
+            _currentManagerState = managerState;
+            _currentManagerState.EnterState(this);
         }
 
         private void Update()
         {
-            _currentState.UpdateState(this);
+            _currentManagerState.UpdateState(this);
 
             if (IsRewindPressed)
             {
@@ -88,18 +88,24 @@ namespace Interaction
                 foreach (var _obj in RecordedInteractableObjs)
                 {
                     _obj.RewindOrInterrupt();
-                    ChangeState(IdleState);
+                    ChangeState(IdleManagerState);
                 }
             }
         }
 
-        public InteractableObj CastCheck()
+        public Interactable CastCheck()
         {
             _raycastPos = _mainCamera.ScreenToWorldPoint(new Vector3(Screen.width / 2f, Screen.height / 2f, 0));
-            _isHit = Physics.SphereCast(_raycastPos, _castRadius, _mainCamera.transform.forward, out _castHit, _castDistance, _interactableMask);
+            _isHit = Physics.Raycast(_raycastPos, _mainCamera.transform.forward, out _castHit, _castDistance, _interactableMask);
             if (!_isHit) return null;
-            var _interactable = _castHit.transform.gameObject.GetComponent<InteractableObj>();
-            return !_interactable.IsRewinding ? _interactable : null;
+            var _gameobject = _castHit.transform.gameObject;
+            var _interactable = _gameobject.GetComponent<Interactable>();
+            var _recordable = _gameobject.GetComponent<Recordable>();
+            if (_recordable == null)
+            {
+                return _interactable;
+            }
+            return _recordable.IsRewinding ? null : _interactable;
         }
     }
 }
