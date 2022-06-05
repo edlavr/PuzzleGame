@@ -291,6 +291,7 @@ GameObject:
   - component: {fileID: 105869916}
   - component: {fileID: 105869915}
   - component: {fileID: 105869914}
+  - component: {fileID: 105869918}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -375,6 +376,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 33.865}
+--- !u!114 &105869918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105869913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d81fac211d2fa2f47a5321d39bc1ebe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeout: 5
 --- !u!1 &250706141
 GameObject:
   m_ObjectHideFlags: 0
@@ -1385,10 +1399,10 @@ MonoBehaviour:
   Event:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 862612556}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: BroadcastMessage
-        m_Mode: 5
+      - m_Target: {fileID: 105869918}
+        m_TargetAssemblyTypeName: Blocker, Assembly-CSharp
+        m_MethodName: DoUnblock
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
